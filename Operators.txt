@@ -1,0 +1,27 @@
+ⅈ→↛↦↑∁∈∏∑∧∨∩∪∵≠≡≢≤≥⊂⊃⊆⊇⊤⊥⌈⌉⌊⌋≟×÷ℑℜℓ
+This document DOES NOT SHOW THE ORDER OF OPERATIONS
+Constants:
+        ⅈ:
+                The imaginary unit, sqrt(-1)
+        ⊤:
+                True: a.k.a. 1 (it is 1)
+        ⊥:
+                False: a.k.a. 0 (it is 0)
+Prefix Unary Operators:
+        +n:
+                Identity function, returns n
+        -n:
+                Negative n
+        ~n:
+                Not n, 0->1 everything else results in 0
+        ↑n:
+                The "unpacking" of n, if n is a set with one element, then it is that element, otherwise it is n
+        ∁n:
+                The set complement of n
+        ℑn:
+                The imaginary part of n
+        ℜn:
+                The real part of n
+        ℓn:
+                The length of the set of n
+        
