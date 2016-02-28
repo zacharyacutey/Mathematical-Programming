@@ -2,7 +2,7 @@
 try:
   from sympy import re,im,Number,Abs,floor,ceiling
 except ImportError:
-  raise RuntimeError("You must install sympy")
+  raise RuntimeError("You must install sympy and any of its dependencies")
   exit()
 class NumberObject:
   def __init__(self,val):
