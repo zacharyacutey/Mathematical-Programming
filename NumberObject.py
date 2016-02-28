@@ -6,3 +6,5 @@ class NumberObject:
     return NumberObject(-self.val)
   def Not(self):
     return NumberObject(1 if self.val==0 else 0)
+  def Pos(self):
+    return NumberObject(self.val)
