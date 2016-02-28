@@ -1,4 +1,5 @@
 #Requires sympy and any of its dependencies
+from __future__ import division
 try:
   from sympy import re,im,Number,Abs,floor,ceiling
 except ImportError:
