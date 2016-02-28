@@ -4,3 +4,5 @@ class NumberObject:
     self.val=Number(val)
   def Neg(self):
     return NumberObject(-self.val)
+  def Not(self):
+    return NumberObject(1 if self.val==0 else 0)
