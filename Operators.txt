@@ -14,7 +14,7 @@ Prefix Unary Operators:
                 Negative n
         ~n:
                 Not n, 0->1 everything else results in 0
-        ↑n:
+        ∈n:
                 The "unpacking" of n, if n is a set with one element, then it is that element, otherwise it is n
         ∁n:
                 The set complement of n
@@ -24,4 +24,81 @@ Prefix Unary Operators:
                 The real part of n
         ℓn:
                 The length of the set of n
-        
+Circumfix Unary Operators:
+        (n):
+                Identity Function
+        [n]:
+                Absolute Value/Magnitude
+        ⌈n⌉:
+                Ceiling
+        ⌊n⌋:
+                Floor
+Binary Operators:
+        a+w:
+                Addition, or set Union
+        a-w:
+                Subtraction, or set Difference
+        a*w or a×w:
+                Multiplication
+        a/w or a÷w:
+                Division, (EVERYTHING IS A MATHEMATICAL OBJECT aka no floats)
+        a^w:
+                Exponentation, (no floats, so they are root objects)
+        a∈w:
+                Membership
+        a∧w or a&w:
+                Logical AND
+        a∨w or a|w:
+                Logical OR
+        a∩w:
+                Set Intersection
+        a∪w:
+                Set Union
+        a<w:
+                Less than
+        a≤w:
+                Less than or equal to
+        a>w:
+                Greater than
+        a≥w:
+                Greater than or equal to
+        a≟w:
+                Is equal to OR Set-Is-Equal-To
+        a≠w:
+                Is not equal to OR Set-Is-Not-Equal To
+        a⊂w:
+                Is a strict subset of
+        a⊃w:
+                Is a strict superset of
+        a⊆w:
+                Is a subset of
+        a⊇w:
+                Is a superset of
+        a≡w:
+                Set-wise is equal to
+        a≢w:
+                Set-wise is not equal to
+Ternary operator:
+        a→b↛c:
+                If a, then b, else c
+Variable-Argument operators:
+        f(a1,a2,a3,...):
+                Function Calling
+Syntactic operators:
+        a=v:
+                Assignment, (can only assign once)
+        f(a1[=v1],a2[=v2],...)=v:
+                Function declaration, v is given in terms of a1,a2,...: v1,v2,... are the default values; must be consecutive starting at the right
+        i∏v:
+                Infinite Product
+        i∑v:
+                Infinite Sum
+Literals:
+        (a1[=v1],a2[=v2],...)↦v:
+                Function Literal
+        0,1,...:
+                Number Literal
+        {i1,i2,...}:
+                Finite Set Literal
+        {expression(v1,v2,v3,...):condition(v1,v2,v3)}:
+                (Potentially) Infinite Set Literal
