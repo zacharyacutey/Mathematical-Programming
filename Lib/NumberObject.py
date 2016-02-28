@@ -22,7 +22,7 @@ class NumberObject:
   def Unpack(self):
     return NumberObject(self.val)
   def Complement(self):
-    raise TypeError("You can not complement a number!")
+    raise TypeError("Type 'Number' does not have Members")
   def RealPart(self):
     return NumberObject(re(self.val))
   def ImaginaryPart(self):
@@ -95,4 +95,16 @@ class NumberObject:
     raise TypeError("Type 'Number' Does Not Have Members")
   def IsMemberOf(self,arg):
     return arg.HasMember(self)
-  d
+  def And(self,arg):
+    if self.val==0 or arg.val==0:
+      return NumberObject(0)
+    return NumberObject(1)
+  def Or(self,arg):
+    if self.val==0 and arg.val==0:
+      return NumberObject(0)
+    return NumberObject(1)
+  def Intersection(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def Union(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  
