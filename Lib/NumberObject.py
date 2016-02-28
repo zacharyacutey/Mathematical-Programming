@@ -1,6 +1,5 @@
 #Requires sympy and any of its dependencies
 from __future__ import division
-import os
 try:
   print(u"αμπλ")
 except UnicodeTranslateError,UnicodeError,UnicodeEncodeError,UnicodeDecodeError:
