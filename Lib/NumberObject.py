@@ -1,3 +1,4 @@
+#Requires sympy and any of its dependencies
 from sympy import *
 class NumberObject:
   def __init__(self,val):
