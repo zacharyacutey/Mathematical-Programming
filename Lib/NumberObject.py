@@ -139,3 +139,8 @@ class NumberObject:
     raise TypeError("Type 'Number' does not have Members")
   def SetNotEqual(self,arg):
     raise TypeError("Type 'Number' does not have Members")
+  def IfThenElse(self,first,last):
+    if self.val==0:
+      return last.Positive()
+    return first.Positive()
+    
