@@ -2,7 +2,7 @@
 from __future__ import division
 import os
 try:
-  print u"αμπλ"
+  print(u"αμπλ")
 except UnicodeTranslateError,UnicodeError,UnicodeEncodeError,UnicodeDecodeError:
   raise NotImplementedError("Sorry, I have not implemented your system's unicode")
 try:
