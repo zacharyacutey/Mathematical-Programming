@@ -22,7 +22,7 @@ Prefix Unary Operators:
         ℜn:
                 The real part of n
         ℓn:
-                The length of the set of n
+                The length of the set n
 Circumfix Unary Operators:
         (n):
                 Identity Function
