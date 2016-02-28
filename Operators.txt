@@ -1,4 +1,3 @@
-ⅈ→↛↦↑∁∈∏∑∧∨∩∪∵≠≡≢≤≥⊂⊃⊆⊇⊤⊥⌈⌉⌊⌋≟×÷ℑℜℓ
 This document DOES NOT SHOW THE ORDER OF OPERATIONS
 Constants:
         ⅈ:
