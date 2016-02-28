@@ -107,4 +107,35 @@ class NumberObject:
     raise TypeError("Type 'Number' does not have Members")
   def Union(self,arg):
     raise TypeError("Type 'Number' does not have Members")
-  
+  def Less(self,arg):
+    if im(self.val)!=0 or im(arg.val)!=0:
+      raise TypeError("Complex Inequalities are not supported")
+    return NumberObject(self.val<arg.val)
+  def LessEqual(self,arg):
+    if im(self.val)!=0 or im(arg.val)!=0:
+      raise TypeError("Complex Inequalities are not supported")
+    return NumberObject(self.val<=arg.val)
+  def Greater(self,arg):
+    if im(self.val)!=0 or im(arg.val)!=0:
+      raise TypeError("Complex Inequalities are not supported")
+    return NumberObject(self.val>arg.val)
+  def GreaterEqual(self,arg):
+    if im(self.val)!=0 or re(arg.val)!=0:
+      raise TypeError("Complex Inequalities are not supported")
+    return NumberObject(self.val>=arg.val)
+  def Equal(self,arg):
+    return NumberObject(self.val==arg.val)
+  def NotEqual(self,arg):
+    return NumberObject(self.val!=arg.val)
+  def Subset(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def SubsetEqual(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def Superset(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def SupersetEqual(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def SetEqual(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
+  def SetNotEqual(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
