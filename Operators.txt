@@ -41,6 +41,8 @@ Binary Operators:
                 Multiplication
         a/w or a÷w:
                 Division, (EVERYTHING IS A MATHEMATICAL OBJECT aka no floats)
+        a%w:
+                Modulo
         a^w:
                 Exponentation, (no floats, so they are root objects)
         a∈w:
