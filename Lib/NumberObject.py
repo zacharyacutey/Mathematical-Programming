@@ -16,7 +16,7 @@ class NumberObject:
   def Negative(self):
     return NumberObject(-self.val)
   def Not(self):
-    return NumberObject(1 if self.val==0 else 0)
+    return NumberObject(self.val==0)
   def Positive(self):
     return NumberObject(self.val)
   def Unpack(self):
