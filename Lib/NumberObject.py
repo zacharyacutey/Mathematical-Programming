@@ -1,5 +1,8 @@
 #Requires sympy and any of its dependencies
 from __future__ import division
+import os
+if os.name!="posix":
+  OSError("I am sorry, only systems with unicode-based-string-printing are supported, I hope to support others soon!")
 try:
   from sympy import re,im,Number,Abs,floor,ceiling
 except ImportError:
@@ -88,4 +91,8 @@ class NumberObject:
     if arg.val==-1:
       return NumberObject(1).Divide(self)
     return NumberObject(self.val**arg.val)
-  
+  def HasMember(self,arg):
+    raise TypeError("Type 'Number' Does Not Have Members")
+  def IsMemberOf(self,arg):
+    return arg.HasMember(self)
+  d
