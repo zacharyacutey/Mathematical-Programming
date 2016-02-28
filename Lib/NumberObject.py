@@ -1,5 +1,9 @@
 #Requires sympy and any of its dependencies
-from sympy import *
+try:
+  from sympy import *
+except ImportError:
+  raise RuntimeError("You must install sympy")
+  exit()
 class NumberObject:
   def __init__(self,val):
     self.val=Number(val)
