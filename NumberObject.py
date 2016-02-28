@@ -1,3 +1,5 @@
 from sympy import *
 class NumberObject:
-  pass
+  def __init__(self,val):
+    self.val=Number(val)
+  
