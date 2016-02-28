@@ -73,3 +73,18 @@ class NumberObject:
     if self.val==0:
       return NumberObject(0)
     return NumberObject(self.val/arg.val)
+  def Modulo(self,arg):
+    return self.Minus(arg.Multiply(self.Divide(arg).Floor()))
+  def Power(self,arg):
+    if arg.val==0:
+      return NumberObject(1)
+    if self.val==0:
+      return NumberObject(0)
+    if arg.val==1:
+      return self.Positive()
+    if self.val==1:
+      return NumberObject(1)
+    if arg.val==-1:
+      return NumberObject(1).Divide(self)
+    return NumberObject(self.val**arg.val)
+  
