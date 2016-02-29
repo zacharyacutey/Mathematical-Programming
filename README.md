@@ -1,3 +1,2 @@
 # Mathematical-Programming
-NO, THIS IS NOT LIKE AMPL: It is not even close: It is NOT mathematical modeling related
-About Mathematics Based Programming, the programming resembles APL, with funny symbols. But it is just math with a little programming. So there are no side-effects to functions, like functional programming, since values do not change. There are no tuples and arrays, since it is meant to resemble math. And there is absolutely no hardware based data types, making it like sympy.
+The only remark at the moment is that it is not like AMPL. It is entirely seperate from Mathematical Programming Languages that are mathematical model(l)ing based. This is just ** much more** math.
