@@ -35,12 +35,16 @@ class NumberObject:
       return arg.Positive()
     if arg.val==0:
       return self.Positive()
+    if arg.Type!="Number":
+      raise TypeError
     return NumberObject(self.val+arg.val)
   def Minus(self,arg):
     if arg.val==0:
       return self.Positive()
     if self.val==arg.val:
       return NumberObject(0)
+    if arg.Type!="Number":
+      raise TypeError
     if self.val==0:
       return arg.Negative()
     return NumberObject(self.val-arg.val)
@@ -55,6 +59,8 @@ class NumberObject:
       return self.Positive()
     if arg.val==-1:
       return self.Negative()
+    if arg.Type!="Number":
+      raise TypeError
     if self.val==-1:
       return arg.Negative()
     return NumberObject(self.val*arg.val)
