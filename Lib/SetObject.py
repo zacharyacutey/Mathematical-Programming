@@ -43,5 +43,5 @@ class FiniteSetObject:
     raise TypeError("Cannot find the floor of a set!")
   def Ceiling(self):
     raise TypeError("Cannot find the ceiling of a set!")
-  def AbsoluteError(self):
+  def AbsoluteValue(self):
     raise TypeError("Cannot find the absolute value of a set!")
