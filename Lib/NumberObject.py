@@ -75,10 +75,14 @@ class NumberObject:
       return NumberObject(1)
     if self.val==0:
       return NumberObject(0)
+    if arg.Type!="Number":
+      raise TypeError
     if self.val==arg.Negative().val:
       return NumberObject(-1)
     return NumberObject(self.val/arg.val)
   def Modulo(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     return self.Minus(arg.Multiply(self.Divide(arg).Floor()))
   def Power(self,arg):
     if arg.val==0:
@@ -91,18 +95,26 @@ class NumberObject:
       return NumberObject(1)
     if arg.val==-1:
       return NumberObject(1).Divide(self)
+    if arg.Type!="Number":
+      raise TypeError
     return NumberObject(self.val**arg.val)
   def HasMember(self,arg):
     raise TypeError
   def IsMemberOf(self,arg):
+    if arg.Type!="Finite" and arg.Type!="Infinite":
+      raise TypeError
     return arg.HasMember(self)
   def And(self,arg):
     if self.val==0 or arg.val==0:
       return NumberObject(0)
+    if arg.Type!="Number":
+      raise TypeError
     return NumberObject(1)
   def Or(self,arg):
     if self.val==0 and arg.val==0:
       return NumberObject(0)
+    if arg.Type!="Number":
+      raise TypeError
     return NumberObject(1)
   def Intersection(self,arg):
     raise TypeError
@@ -111,24 +123,37 @@ class NumberObject:
   def SetDifference(self,arg):
     raise TypeError
   def Less(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
     return NumberObject(self.val<arg.val)
   def LessEqual(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
+    if 
     return NumberObject(self.val<=arg.val)
   def Greater(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
     return NumberObject(self.val>arg.val)
   def GreaterEqual(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
     return NumberObject(self.val>=arg.val)
   def Equal(self,arg):
+    if arg.Type=="Function" or arg.Type=="Infinite":
+      raise TypeError
     return NumberObject(self.val==arg.val)
   def NotEqual(self,arg):
+    if arg.Type=="Function" or arg.Type=="Infinite":
+      raise TypeError
     return NumberObject(self.val!=arg.val)
   def Subset(self,arg):
     raise TypeError
