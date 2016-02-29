@@ -39,3 +39,31 @@ class FiniteSetObject:
     raise TypeError("Cannot find the ceiling of a set!")
   def AbsoluteValue(self):
     raise TypeError("Cannot find the absolute value of a set!")
+  def Add(self,arg):
+    if arg.val==0:
+      return self.Positive()
+    return self.Union(arg)
+  def Minus(self,arg):
+    if arg.val==0:
+      return self.Positive()
+    return self.SetDifference(arg)
+  def Multiply(self,arg):
+    if arg.val==0:
+      return NumberObject(0)
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError("Cannot multiply a set")
+  def Divide(self,arg):
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError("Cannot multiply sets")
+  def Modulo(self,arg):
+    raise TypeError("Cannot % sets")
+  def Power(self,arg):
+    if arg.val==0:
+      return NumberObject(1)
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError("Cannot Exponentiate sets")
+class InfiniteSetObject:
+  pass
