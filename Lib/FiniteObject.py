@@ -10,6 +10,8 @@ class Finite:
     for i in args:
       if i.Type=="Infinite" or i.Type=="Function":
         raise TypeError
+      if i.Type=="Finite":
+        raise NotImplementedError
     self.val=args
     i=0
     while i<len(self.val):
