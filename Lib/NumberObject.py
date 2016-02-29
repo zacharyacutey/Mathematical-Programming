@@ -5,6 +5,7 @@ from sympy import re,im,Number,Abs,floor,ceiling
 class NumberObject:
   def __init__(self,val):
     self.val=Number(val)
+  @property
   def Type(self):
     return "Number"
   def Negative(self):
@@ -34,16 +35,12 @@ class NumberObject:
       return arg.Positive()
     if arg.val==0:
       return self.Positive()
-    if arg.Type()!="Number":
-      raise TypeError
     return NumberObject(self.val+arg.val)
   def Minus(self,arg):
     if arg.val==0:
       return self.Positive()
     if self.val==arg.val:
       return NumberObject(0)
-    if arg.Type()!="Number":
-      raise TypeError
     if self.val==0:
       return arg.Negative()
     return NumberObject(self.val-arg.val)
@@ -56,8 +53,6 @@ class NumberObject:
       return arg.Positive()
     if arg.val==1:
       return self.Positive()
-    if arg.Type()!="Number":
-      raise TypeError
     if arg.val==-1:
       return self.Negative()
     if self.val==-1:
@@ -74,14 +69,10 @@ class NumberObject:
       return NumberObject(1)
     if self.val==0:
       return NumberObject(0)
-    if arg.Type()!="Number":
-      raise TypeError
     if self.val==arg.Negative().val:
       return NumberObject(-1)
     return NumberObject(self.val/arg.val)
   def Modulo(self,arg):
-    if arg.Type()!="Number":
-      raise TypeError
     return self.Minus(arg.Multiply(self.Divide(arg).Floor()))
   def Power(self,arg):
     if arg.val==0:
@@ -94,13 +85,10 @@ class NumberObject:
       return NumberObject(1)
     if arg.val==-1:
       return NumberObject(1).Divide(self)
-    if arg.Type()!="Number":
-      raise TypeError
     return NumberObject(self.val**arg.val)
   def HasMember(self,arg):
     raise TypeError
   def IsMemberOf(self,arg):
-    if arg
     return arg.HasMember(self)
   def And(self,arg):
     if self.val==0 or arg.val==0:
@@ -122,32 +110,32 @@ class NumberObject:
     return NumberObject(self.val<arg.val)
   def LessEqual(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
-      raise TypeError("Complex Inequalities are not supported")
+      raise TypeError
     return NumberObject(self.val<=arg.val)
   def Greater(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
-      raise TypeError("Complex Inequalities are not supported")
+      raise TypeError
     return NumberObject(self.val>arg.val)
   def GreaterEqual(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
-      raise TypeError("Complex Inequalities are not supported")
+      raise TypeError
     return NumberObject(self.val>=arg.val)
   def Equal(self,arg):
     return NumberObject(self.val==arg.val)
   def NotEqual(self,arg):
     return NumberObject(self.val!=arg.val)
   def Subset(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def SubsetEqual(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def Superset(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def SupersetEqual(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def SetEqual(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def SetNotEqual(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def IfThenElse(self,first,last):
     if self.val==0:
       return last.Positive()
