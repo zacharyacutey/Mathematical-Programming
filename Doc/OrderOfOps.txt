@@ -1,0 +1,6 @@
+Note:
+LTR means left to right evaluation
+RTL means right to left evaluation
+The groups go from Top to bottom, the topmost being evaluated first, the bottom being evaluated last
+
+Not ready yet!
