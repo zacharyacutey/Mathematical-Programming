@@ -105,16 +105,16 @@ class NumberObject:
       raise TypeError
     return arg.HasMember(self)
   def And(self,arg):
+    if arg.Type!="Number":
+      raise TypeError
     if self.val==0 or arg.val==0:
       return NumberObject(0)
-    if arg.Type!="Number":
-      raise TypeError
     return NumberObject(1)
   def Or(self,arg):
-    if self.val==0 and arg.val==0:
-      return NumberObject(0)
     if arg.Type!="Number":
       raise TypeError
+    if self.val==0 and arg.val==0:
+      return NumberObject(0)
     return NumberObject(1)
   def Intersection(self,arg):
     raise TypeError
@@ -133,7 +133,6 @@ class NumberObject:
       raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
-    if 
     return NumberObject(self.val<=arg.val)
   def Greater(self,arg):
     if arg.Type!="Number":
@@ -171,4 +170,3 @@ class NumberObject:
     if self.val==0:
       return last.Positive()
     return first.Positive()
-    
