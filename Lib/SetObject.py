@@ -15,7 +15,7 @@ class FiniteSetObject:
     while i<len(self.val):
       j=i+1
       while j<len(self.val):
-        if self.val[i].Equals(self.val[j]):
+        if self.val[i].Equal(self.val[j]):
           self.val.pop(j)
         j=j+1
       i=i+1
