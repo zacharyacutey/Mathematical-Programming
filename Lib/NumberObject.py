@@ -16,13 +16,13 @@ class NumberObject:
   def Unpack(self):
     return NumberObject(self.val)
   def Complement(self):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def RealPart(self):
     return NumberObject(re(self.val))
   def ImaginaryPart(self):
     return NumberObject(im(self.val))
   def Length(self):
-    return NumberObject(0)
+    raise TypeError
   def Floor(self):
     return NumberObject(floor(self.val))
   def Ceiling(self):
@@ -34,14 +34,18 @@ class NumberObject:
       return arg.Positive()
     if arg.val==0:
       return self.Positive()
+    if arg.Type()!="Number":
+      raise TypeError
     return NumberObject(self.val+arg.val)
   def Minus(self,arg):
-    if self.val==0:
-      return arg.Negative()
     if arg.val==0:
       return self.Positive()
     if self.val==arg.val:
       return NumberObject(0)
+    if arg.Type()!="Number":
+      raise TypeError
+    if self.val==0:
+      return arg.Negative()
     return NumberObject(self.val-arg.val)
   def Multiply(self,arg):
     if self.val==0:
@@ -52,6 +56,8 @@ class NumberObject:
       return arg.Positive()
     if arg.val==1:
       return self.Positive()
+    if arg.Type()!="Number":
+      raise TypeError
     if arg.val==-1:
       return self.Negative()
     if self.val==-1:
@@ -59,19 +65,23 @@ class NumberObject:
     return NumberObject(self.val*arg.val)
   def Divide(self,arg):
     if arg.val==0:
-      raise DivideByZeroError("The second argument cannot be 0")
+      raise DivideByZeroError
     if arg.val==1:
       return self.Positive()
     if arg.val==-1:
       return self.Negative()
     if self.val==arg.val:
       return NumberObject(1)
-    if self.val==arg.Negative().val:
-      return NumberObject(-1)
     if self.val==0:
       return NumberObject(0)
+    if arg.Type()!="Number":
+      raise TypeError
+    if self.val==arg.Negative().val:
+      return NumberObject(-1)
     return NumberObject(self.val/arg.val)
   def Modulo(self,arg):
+    if arg.Type()!="Number":
+      raise TypeError
     return self.Minus(arg.Multiply(self.Divide(arg).Floor()))
   def Power(self,arg):
     if arg.val==0:
@@ -84,10 +94,13 @@ class NumberObject:
       return NumberObject(1)
     if arg.val==-1:
       return NumberObject(1).Divide(self)
+    if arg.Type()!="Number":
+      raise TypeError
     return NumberObject(self.val**arg.val)
   def HasMember(self,arg):
-    raise TypeError("Type 'Number' Does Not Have Members")
+    raise TypeError
   def IsMemberOf(self,arg):
+    if arg
     return arg.HasMember(self)
   def And(self,arg):
     if self.val==0 or arg.val==0:
@@ -98,14 +111,14 @@ class NumberObject:
       return NumberObject(0)
     return NumberObject(1)
   def Intersection(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def Union(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def SetDifference(self,arg):
-    raise TypeError("Type 'Number' does not have Members")
+    raise TypeError
   def Less(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
-      raise TypeError("Complex Inequalities are not supported")
+      raise TypeError
     return NumberObject(self.val<arg.val)
   def LessEqual(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
