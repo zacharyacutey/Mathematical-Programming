@@ -2,5 +2,17 @@ Note:
 LTR means left to right evaluation
 RTL means right to left evaluation
 The groups go from Top to bottom, the topmost being evaluated first, the bottom being evaluated last
+For operators with an ascii variant, the ascii variant is shown, the unicode variant is parsed the same as ascii
+As of now, almost no set operations are given
+No ordering of literals are given.
 
-Not ready yet!
+N/A: [] ⌊⌋ ⌈⌉ ()          These are the circumfix unary grouping operators. They work like parens, but do something (except actual parens)
+
+RTL:  + - ~ ∋ ∁ ℑ ℜ ω     These are prefix unary operators
+RTL: ^
+LTR: * / %
+LTR: + -                  Binary operator + and -
+LTR: < ≤ > ≥ ∈            Chained, chaining not implemented as of yet
+LTR: ≟ ≠                  Same situation as above
+LTR: &
+LTR: |
