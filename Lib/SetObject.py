@@ -4,6 +4,9 @@ print(u"αμπλ")
 from sympy import re,im,Number,Abs,floor,ceiling
 class FiniteSetObject:
   def __init__(self,*args):
+    for i of args:
+      if i.Type()!="SetF" and i.Type()!="Number":
+        raise TypeError
     self.val=args
     i=0
     while i<len(self.val):
@@ -14,11 +17,11 @@ class FiniteSetObject:
         j=j+1
       i=i+1
   def Type(self):
-    return "FiniteSet"
+    return "SetF"
   def Negative(self):
-    raise TypeError("You can not have a negative Set")
+    raise TypeError
   def Not(self):
-    raise TypeError("You can not do '~' to a Set")
+    raise TypeError
   def Positive(self):
     return FiniteSetObject(*self.val)
   def Unpack(self):
@@ -28,17 +31,17 @@ class FiniteSetObject:
   def Complement(self):
     return InfiniteSetObject(lambda n : self.HasMember(n).Not())
   def RealPart(self):
-    raise TypeError("Cannot find real part of a set!")
+    raise TypeError
   def ImaginaryPart(self):
-    raise TypeError("Cannot find the imaginary part of a set!")
+    raise TypeError
   def Length(self):
     return NumberObject(len(self.val))
   def Floor(self):
-    raise TypeError("Cannot find the floor of a set!")
+    raise TypeError
   def Ceiling(self):
-    raise TypeError("Cannot find the ceiling of a set!")
+    raise TypeError
   def AbsoluteValue(self):
-    raise TypeError("Cannot find the absolute value of a set!")
+    raise TypeError
   def Add(self,arg):
     if arg.val==0:
       return self.Positive()
@@ -52,18 +55,18 @@ class FiniteSetObject:
       return NumberObject(0)
     if arg.val==1:
       return self.Positive()
-    raise TypeError("Cannot multiply a set")
+    raise TypeError
   def Divide(self,arg):
     if arg.val==1:
       return self.Positive()
-    raise TypeError("Cannot multiply sets")
+    raise TypeError
   def Modulo(self,arg):
-    raise TypeError("Cannot % sets")
+    raise TypeError
   def Power(self,arg):
     if arg.val==0:
       return NumberObject(1)
     if arg.val==1:
       return self.Positive()
-    raise TypeError("Cannot Exponentiate sets")
+    raise TypeError
 class InfiniteSetObject:
   pass
