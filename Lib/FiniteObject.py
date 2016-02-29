@@ -48,3 +48,9 @@ class Finite:
     raise TypeError
   def Length(self):
     return Number(len(self.val))
+  def Floor(self):
+    raise TypeError
+  def Ceiling(self):
+    raise TypeError
+  def AbsoluteValue(self):
+    raise TypeError
