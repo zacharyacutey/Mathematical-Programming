@@ -79,6 +79,8 @@ Binary Operators:
                 Set-wise is equal to
         a≢w:
                 Set-wise is not equal to
+        a\w:
+                Set Difference
 Ternary operator:
         a→b↛c:
                 If a, then b, else c
