@@ -107,6 +107,8 @@ class NumberObject:
     raise TypeError("Type 'Number' does not have Members")
   def Union(self,arg):
     raise TypeError("Type 'Number' does not have Members")
+  def SetDifference(self,arg):
+    raise TypeError("Type 'Number' does not have Members")
   def Less(self,arg):
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError("Complex Inequalities are not supported")
