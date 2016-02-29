@@ -122,7 +122,7 @@ class NumberObject:
       raise TypeError("Complex Inequalities are not supported")
     return NumberObject(self.val>arg.val)
   def GreaterEqual(self,arg):
-    if im(self.val)!=0 or re(arg.val)!=0:
+    if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError("Complex Inequalities are not supported")
     return NumberObject(self.val>=arg.val)
   def Equal(self,arg):
