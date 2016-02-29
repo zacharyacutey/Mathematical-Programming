@@ -8,7 +8,7 @@ try:
   from sympy import re,im,Number,Abs,floor,ceiling
 except ImportError:
   raise RuntimeError("You must install sympy and any of its dependencies")
-class FiniteObject:
+class FiniteSetObject:
   def __init__(self,*args):
     self.val=args
     i=0
@@ -26,13 +26,13 @@ class FiniteObject:
   def Not(self):
     raise TypeError("You can not do '~' to a Set")
   def Positive(self):
-    return FiniteObject(*self.val)
+    return FiniteSetObject(*self.val)
   def Unpack(self):
-    if len(self.val)==0:
+    if len(self.val)==1:
       return self.val[0].Positive()
     return self.Positive()
   def Complement(self):
-    raise NotImplementedError("I am sorry, but I have not implemented Infinite Sets, so complements are not working!")
+    return InfiniteSetObject(lambda n : self.HasMember(n).Not())
   def RealPart(self):
     raise TypeError("Cannot find real part of a set!")
   def ImaginaryPart(self):
