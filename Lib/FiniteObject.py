@@ -33,10 +33,10 @@ class Finite:
   def Not(self):
     raise TypeError
   def Positive(self):
-    return Number(0)
+    return Finite(*[i.val for i in self.val])
   def Unpack(self):
     if len(self.val)==1:
-      return self.val[0]
+      return self.val[0].Positive()
     return self.Positive()
   def Complement(self):
     return Infinite(lambda n : n.IsMemberOf(self).Not())
@@ -44,4 +44,5 @@ class Finite:
     raise TypeError
   def ImaginaryPart(self):
     raise TypeError
-  def Length(self)
+  def Length(self):
+    return Number(len(self.val))
