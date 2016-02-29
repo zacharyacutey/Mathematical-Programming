@@ -1,6 +1,6 @@
 This document DOES NOT SHOW THE ORDER OF OPERATIONS
 Constants:
-        ⅈ:
+        ι:
                 The imaginary unit, sqrt(-1)
         ⊤:
                 True: a.k.a. 1 (it is 1)
@@ -13,7 +13,7 @@ Prefix Unary Operators:
                 Negative n
         ~n:
                 Not n, 0->1 everything else results in 0
-        ∈n:
+        ∋n:
                 The "unpacking" of n, if n is a set with one element, then it is that element, otherwise it is n
         ∁n:
                 The set complement of n
@@ -21,7 +21,7 @@ Prefix Unary Operators:
                 The imaginary part of n
         ℜn:
                 The real part of n
-        ℓn:
+        ωn:
                 The length of the set n
 Circumfix Unary Operators:
         (n):
@@ -37,9 +37,9 @@ Binary Operators:
                 Addition, or set Union
         a-w:
                 Subtraction, or set Difference
-        a*w or a×w:
+        a*w or a×w: * is ascii variant
                 Multiplication
-        a/w or a÷w:
+        a/w or a÷w: / is ascii variant
                 Division, (EVERYTHING IS A MATHEMATICAL OBJECT aka no floats)
         a%w:
                 Modulo
@@ -47,9 +47,9 @@ Binary Operators:
                 Exponentation, (no floats, so they are root objects)
         a∈w:
                 Membership
-        a∧w or a&w:
+        a∧w or a&w: & is ascii variant
                 Logical AND
-        a∨w or a|w:
+        a∨w or a|w: | is ascii variant
                 Logical OR
         a∩w:
                 Set Intersection
