@@ -3,7 +3,6 @@ LTR means left to right evaluation
 RTL means right to left evaluation
 The groups go from Top to bottom, the topmost being evaluated first, the bottom being evaluated last
 For operators with an ascii variant, the ascii variant is shown, the unicode variant is parsed the same as ascii
-For now, the sets are in the same place as the equivalent other operation, this will be revised
 No ordering of literals are given.
 
 N/A: [] ⌊⌋ ⌈⌉ ()          These are the circumfix unary grouping operators. They work like parens, but do something (except actual parens)
