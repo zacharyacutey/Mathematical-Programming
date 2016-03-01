@@ -1,10 +1,8 @@
 from NumberObject import Number
 from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
-#from InfiniteObject import Infinite
+from InfiniteObject import Infinite
 sortNumber=lambda n : [Number(j) for j in sorted([i.val for i in n])]
-# class Infinite:
-#   pass
 class Finite:
   def __init__(self,*args):
     for i in args:
@@ -76,3 +74,17 @@ class Finite:
     if arg.val==1:
       return self.Positive()
     raise TypeError
+  def HasMember(self,arg):
+    for i in self.val:
+      if i.val==arg.val:
+        return Number(1)
+    return Number(0)
+  def IsMemberOf(self,arg):
+    raise NotImplementedError
+  def And(self,arg):
+    raise TypeError
+  def Or(self,arg):
+    raise TypeError
+  """
+  TODO: Implement Union and Intersection, two necessary components of Sets
+  """
