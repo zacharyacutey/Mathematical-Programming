@@ -1,3 +1,6 @@
+"""
+TODO: Implement nested Finite's
+"""
 from NumberObject import Number
 from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
