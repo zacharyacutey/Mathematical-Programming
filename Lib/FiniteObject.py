@@ -70,3 +70,9 @@ class Finite:
     raise TypeError
   def Modulo(self,arg):
     raise TypeError
+  def Power(self,arg):
+    if arg.val==0:
+      return Number(1)
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError
