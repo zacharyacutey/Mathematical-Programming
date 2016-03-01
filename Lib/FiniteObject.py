@@ -2,7 +2,7 @@ from NumberObject import Number
 from InfiniteObject import Infinite
 from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
-sortNumber=lambda n : [(Number(j) if type(j)!=tuple else list(j)) for j in sorted([(i.val if type(i)!=list else tuple(i.val)) for i in n])]
+sortNumber=lambda n : [(Number(j) if type(j)!=tuple else Finite(list(j)))for j in sorted([(i.val if type(i.val)!=list else tuple(sortNumber(i.val))) for i in n])]
 class Finite:
   def __init__(self,*args):
     for i in args:
@@ -51,8 +51,10 @@ class Finite:
   def AbsoluteValue(self):
     raise TypeError
   def Add(self,arg):
+    if arg.val==0: return Number(0)
     return self.Union(arg)
   def Minus(self,arg):
+    if arg.val==0: return Number(0)
     return self.SetDifference(arg)
   def Multiply(self,arg):
     if arg.val==0:
@@ -74,11 +76,11 @@ class Finite:
     raise TypeError
   def HasMember(self,arg):
     for i in self.val:
-      if i.val==arg.val:
+      if bool(i.Equal(arg).val):
         return Number(1)
     return Number(0)
   def IsMemberOf(self,arg):
-    raise NotImplementedError
+    return arg.HasMember(self)
   def And(self,arg):
     raise TypeError
   def Or(self,arg):
@@ -88,12 +90,20 @@ class Finite:
       return Finite(*(self.val+arg.val))
     return Infinite(lambda n : (n,n.IsMemberOf(self).Or(n.IsMemberOf(arg))))
   def Intersection(self,arg):
-    if arg.Type=="Finite": #Must implement this later!
-      pass
+    if arg.Type=="Finite":
+      t=Finite()
+      for i in self.val:
+        if i in arg.val:
+          t=t.Union(i)
+      return t
     return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg))))
   def SetDifference(self,arg):
     if arg.Type=="Finite":
-      pass
+      t=Finite()
+      for i in self.val:
+        if not ( i in arg.val ):
+          t=t.Union(i)
+      return t
     return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg).Not()))
   def Less(self,arg):
     raise TypeError
@@ -104,15 +114,19 @@ class Finite:
   def GreaterEqual(self,arg):
     raise TypeError
   def Equal(self,arg):
+    if arg.Type=="Infinite":
+      for i in self.val:
+        if 
     return Number(self.val==arg.val)
   def NotEqual(self,arg):
-    return Number(self.val!=arg.val)
+    return self.Equal(arg).Not()
   def Subset(self,arg):
     for i in self.val:
       if bool(i.IsMemberOf(arg).Not().val):
         return Number(0)
-    if self.Length()==arg.Length():
-      return Number(0)
+    if arg.Type=="Infinite":
+      if self.Length()==arg.Length():
+        return Number(0)
     return Number(1)
   def Superset(self,arg):
     return arg.Subset(self)
