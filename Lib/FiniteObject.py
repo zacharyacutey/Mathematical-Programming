@@ -54,3 +54,19 @@ class Finite:
     raise TypeError
   def AbsoluteValue(self):
     raise TypeError
+  def Add(self,arg):
+    return self.Union(arg)
+  def Minus(self,arg):
+    return self.SetDifference(arg)
+  def Multiply(self,arg):
+    if arg.val==0:
+      return Number(0)
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError
+  def Divide(self,arg):
+    if arg.val==1:
+      return self.Positive()
+    raise TypeError
+  def Modulo(self,arg):
+    raise TypeError
