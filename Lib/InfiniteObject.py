@@ -7,7 +7,7 @@ class Infinite:
   def __init__(self,val):
     self.val=val
   @property
-  Type(self):
+  def Type(self):
     return "Infinite"
   def Negative(self):
     raise TypeError
