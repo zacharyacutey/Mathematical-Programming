@@ -1,18 +1,13 @@
-"""
-TODO: Implement nested Finite's
-"""
 from NumberObject import Number
 from InfiniteObject import Infinite
 from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
-sortNumber=lambda n : [Number(j) for j in sorted([i.val for i in n])]
+sortNumber=lambda n : [(Number(j) if type(j)!=tuple else list(j)) for j in sorted([(i.val if type(i)!=list else tuple(i.val)) for i in n])]
 class Finite:
   def __init__(self,*args):
     for i in args:
       if i.Type=="Infinite" or i.Type=="Function":
         raise TypeError
-      if i.Type=="Finite":
-        raise NotImplementedError
     self.val=args
     i=0
     while i<len(self.val):
