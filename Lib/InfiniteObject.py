@@ -1,4 +1,4 @@
 from NumberObject import Number
 from FiniteObject import Finite
-class Infinite:
-  pass
+from __future__ import division
+from sympy import re,im,Abs,floor,ceiling
