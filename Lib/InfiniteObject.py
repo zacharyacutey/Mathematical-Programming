@@ -6,7 +6,8 @@ class Infinite:
   #Infinite paramteter takes local vars and returns a tuple consisting of (value,condition)
   def __init__(self,val):
     self.val=val
-  @property Type(self):
+  @property
+  Type(self):
     return "Infinite"
   def Negative(self):
     raise TypeError
