@@ -2,9 +2,9 @@
 TODO: Implement nested Finite's
 """
 from NumberObject import Number
+from InfiniteObject import Infinite
 from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
-from InfiniteObject import Infinite
 sortNumber=lambda n : [Number(j) for j in sorted([i.val for i in n])]
 class Finite:
   def __init__(self,*args):
@@ -42,7 +42,7 @@ class Finite:
       return self.val[0].Positive()
     return self.Positive()
   def Complement(self):
-    return Infinite(lambda n : n.IsMemberOf(self).Not())
+    return Infinite(lambda n : (n,(n.IsMemberOf(self).Not())))
   def RealPart(self):
     raise TypeError
   def ImaginaryPart(self):
@@ -91,15 +91,15 @@ class Finite:
   def Union(self,arg):
     if arg.Type=="Finite":
       return Finite(*(self.val+arg.val))
-    return Infinite(lambda n : n.IsMemberOf(self).Or(n.IsMemberOf(arg)))
+    return Infinite(lambda n : (n,n.IsMemberOf(self).Or(n.IsMemberOf(arg))))
   def Intersection(self,arg):
     if arg.Type=="Finite": #Must implement this later!
       pass
-    return Infinite(lambda n : n.IsMemberOf(self).And(n.IsMemberOf(arg)))
+    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg))))
   def SetDifference(self,arg):
     if arg.Type=="Finite":
       pass
-    return Infinite(lambda n : n.IsMemberOf(self).And(n.IsMemberOf(arg).Not()))
+    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg).Not()))
   def Less(self,arg):
     raise TypeError
   def LessEqual(self,arg):
