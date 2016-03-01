@@ -109,3 +109,27 @@ class Finite:
     return Number(self.val==arg.val)
   def NotEqual(self,arg):
     return Number(self.val!=arg.val)
+  def Subset(self,arg):
+    for i in self.val:
+      if bool(i.IsMemberOf(arg).Not().val):
+        return Number(0)
+    if self.Length()==arg.Length():
+      return Number(0)
+    return Number(1)
+  def Superset(self,arg):
+    return arg.Subset(self)
+  def SubsetEqual(self,arg):
+    for i in self.val:
+      if bool(i.IsMemberOf(arg).Not().val):
+        return Number(0)
+    return Number(1)
+  def SupersetEqual(self,arg):
+    return arg.SubsetEqual(self)
+  def SetEqual(self,arg):
+    if arg.Type!="Finite" and arg.Type!="Infinite":
+      raise TypeError
+    return self.Equal(arg)
+  def SetNotEqual(self,arg):
+    return self.Equal(arg).Not()
+  def IfThenElse(self,first,last):
+    raise TypeError
