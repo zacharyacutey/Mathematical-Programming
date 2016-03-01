@@ -12,6 +12,22 @@ for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
     if not j==0:
       SET_OF_ALL.add(_Number(i)/j)
+def DoSomethingHelper(arg): #Am in no way sure how to describe this
+  t=set()
+  for i in arg:
+    for j in SET_OF_ALL:
+      t.add(i+j)
+  return t
+def DoSomething(arg):
+  t=set()
+  for i in SET_OF_ALL:
+    t.add(i)
+  i=1
+  while True:
+    if i==arg:
+      return t
+    t=DoSomeThingHelper(t)
+    i+=1
 class Infinite:
   #Infinite paramteter takes local vars and returns a tuple consisting of (value,condition) {n:n+1} -> Infinite(lambda n : (n,n+1)
   def __init__(self,val):
