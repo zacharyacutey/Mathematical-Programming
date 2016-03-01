@@ -1,15 +1,17 @@
 from NumberObject import Number
 from __future__ import division
 from sympy import re,im,Abs,floor,ceiling
+from sympy import Number as _Number
+import inspect
 MIN_N=-100
 MAX_N=100
 MIN_D=100
 MAX_D=100
 SET_OF_ALL={}
-for i in range(MIN_V,MAX_V+1):
-  for j in range(MIN_V,MAX_V+1):
+for i in range(MIN_N,MAX_N+1):
+  for j in range(MIN_D,MAX_D+1):
     if not j==0:
-      SET_OF_ALL.add(Number(i).Divide(j))
+      SET_OF_ALL.add(_Number(i)/j)
 class Infinite:
   #Infinite paramteter takes local vars and returns a tuple consisting of (value,condition) {n:n+1} -> Infinite(lambda n : (n,n+1)
   def __init__(self,val):
@@ -67,4 +69,3 @@ class Infinite:
     raise TypeError
   def HasMember(self,arg):
     pass
-    
