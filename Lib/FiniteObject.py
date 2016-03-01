@@ -85,6 +85,27 @@ class Finite:
     raise TypeError
   def Or(self,arg):
     raise TypeError
-  """
-  TODO: Implement Union and Intersection, two necessary components of Sets
-  """
+  def Union(self,arg):
+    if arg.Type=="Finite":
+      return Finite(*(self.val+arg.val))
+    return Infinite(lambda n : n.IsMemberOf(self).Or(n.IsMemberOf(arg)))
+  def Intersection(self,arg):
+    if arg.Type=="Finite": #Must implement this later!
+      pass
+    return Infinite(lambda n : n.IsMemberOf(self).And(n.IsMemberOf(arg)))
+  def SetDifference(self,arg):
+    if arg.Type=="Finite":
+      pass
+    return Infinite(lambda n : n.IsMemberOf(self).And(n.IsMemberOf(arg).Not()))
+  def Less(self,arg):
+    raise TypeError
+  def LessEqual(self,arg):
+    raise TypeError
+  def Greater(self,arg):
+    raise TypeError
+  def GreaterEqual(self,arg):
+    raise TypeError
+  def Equal(self,arg):
+    return Number(self.val==arg.val)
+  def NotEqual(self,arg):
+    return Number(self.val!=arg.val)
