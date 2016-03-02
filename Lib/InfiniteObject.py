@@ -84,4 +84,51 @@ class Infinite:
   def Modulo(self,arg):
     raise TypeError
   def HasMember(self,arg):
-    pass
+    val=DoSomething(len(inspect.argspec(self.val)[0])+len(inspect.argspec(self.val)[1] if inspect.argspec(self.val)[1]!=None else []))
+    for i in val:
+      if self.val(*i)[1].val!=0:
+        return Number(1)
+    return Number(0)
+  def IsMemberOf(self,arg):
+    return arg.HasMember(self)
+  def And(self,arg):
+    raise TypeError
+  def Or(self,arg):
+    raise TypeError
+  def Union(self,arg):
+    return Infinite(lambda n : (n,n.IsMemberOf(self).Or(n.IsMemberOf(arg))))
+  def Intersection(self,arg):
+    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg))))
+  def SetDifference(self,arg):
+    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg).Not())))
+  def Less(self,arg):
+    raise TypeError
+  def LessEqual(self,arg):
+    raise TypeError
+  def Greater(self,arg):
+    raise TypeError
+  def GreaterEqual(self,arg):
+    raise TypeError
+  def Equal(self,arg):
+    return self.SetEqual(arg)
+  def NotEqual(self,arg):
+    return self.SetNotEqual(arg)
+  def Subset(self,arg):
+    return self.SubsetEqual(arg).And(self.SetNotEqual(arg))
+  def SubsetEqual(self,arg):
+    val=DoSomething(len(inspect.argspec(self.val)[0])+len(inspect.argspec(self.val)[1] if inspect.argspec(self.val)[1]!=None else []))
+    for i in val:
+      if self.val(*i)[1].Equal(Number(0)):
+        return Number(0)
+    return Number(1)
+      
+  def Superset(self,arg):
+    return self.SubsetEqual(arg).Not()
+  def SupersetEqual(self,arg):
+    return self.Subset(arg).Not()
+  def SetEqual(self,arg):
+    return self.SupersetEqual(arg).And(self.SubsetEqual(arg))
+  def SetNotEqual(self,arg):
+    return self.SetEqual(arg).Not()
+  def IfThenElse(self,arg):
+    raise TypeError
