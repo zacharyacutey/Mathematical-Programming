@@ -16,3 +16,15 @@ class Variable:
     return self.val.Not()
   def Unpack(self):
     return self.val.Unpack()
+  def RealPart(self):
+    return self.val.RealPart()
+  def ImaginaryPart(self):
+    return self.val.ImaginaryPart()
+  def Floor(self):
+    return self.val.Floor()
+  def Ceiling(self):
+    return self.val.Ceiling()
+  def AbsoluteValue(self):
+    return self.val.AbsoluteValue()
+  def Length(self):
+    return self.val.Length()
