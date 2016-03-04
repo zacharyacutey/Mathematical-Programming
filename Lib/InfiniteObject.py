@@ -7,7 +7,7 @@ MIN_N=-100
 MAX_N=100
 MIN_D=100
 MAX_D=100
-SET_OF_ALL={}
+SET_OF_ALL=set()
 for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
     if not j==0:
