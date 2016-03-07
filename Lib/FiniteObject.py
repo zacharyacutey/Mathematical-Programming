@@ -145,3 +145,5 @@ class Finite:
     return self.Equal(arg).Not()
   def IfThenElse(self,first,last):
     raise TypeError
+  def Call(self,*args):
+    raise TypeError
