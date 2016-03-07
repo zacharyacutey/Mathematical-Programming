@@ -16,3 +16,13 @@ def ascii_to_unicode(s):
       r+=s[i]
       i+=1
   return r
+def remove_w(s):
+  i=0
+  r=""
+  while i<len(s):
+    if s[i]=="\n" or s[i]=="\r" or s[i]=="\t" or s[i]==" ":
+      i+=1
+    else:
+      r+=s[i]
+      i+=1
+  
