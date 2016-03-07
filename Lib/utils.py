@@ -1,4 +1,6 @@
 atd={"$img":"ℑ"}
+#To Do:
+#ALLOW WINDOWS FUNCTIONALITY!!!!!!!!!!!!!!!!
 def ascii_to_unicode(s):
   i=0
   r=""
