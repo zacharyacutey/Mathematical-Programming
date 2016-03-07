@@ -1,1 +1,15 @@
-I AM SORRY!
+Sp. Sc.:  ×÷ℑℜⅈ→↦↛∁∈∋ΠΣ∔∧∨∩∪∸≟≠≡≢≤≥⊂⊃⊆⊇⊤⊥⌈⌉⌊⌋ω
+~ ℑ ℜ ∁ ∋ ∔ ∸ ω ⌈⌉ ⌊⌋ () [] RTL (unary prefix and ambipositional)
+^ RTL
+× ÷ % LTR
++ - LTR
+> ≥ ≤ < LTR Chained
+≟ ≠ RTL
+∩ LTR
+∪ \ LTR
+⊂ ⊃ ⊆ ⊇ LTR Chained
+≢ ≡ LTR Chained
+∧ LTR
+∨ LTR
+→ ↛ RTL/ NA
+Π Σ RTL/ NA
