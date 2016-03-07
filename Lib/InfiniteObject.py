@@ -132,3 +132,5 @@ class Infinite:
     return self.SetEqual(arg).Not()
   def IfThenElse(self,arg):
     raise TypeError
+  def Call(self,*args):
+    raise TypeError
