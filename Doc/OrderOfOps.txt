@@ -13,3 +13,7 @@ Sp. Sc.:  ×÷ℑℜⅈ→↦↛∁∈∋ΠΣ∔∧∨∩∪∸≟≠≡≢≤�
 ∨ LTR
 → ↛ RTL/ NA
 Π Σ RTL/ NA
+
+Unicode Notes:
+\ is the ASCII CHARACTER!
+The Greek characters are the Greek Character Codepoints!
