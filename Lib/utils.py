@@ -25,4 +25,4 @@ def remove_w(s):
     else:
       r+=s[i]
       i+=1
-  
+  return r
