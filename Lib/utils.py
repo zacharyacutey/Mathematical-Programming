@@ -1,3 +1,18 @@
 atd=None
 def ascii_to_unicode(s):
-  
+  i=0
+  r=""
+  while i<len(s):
+    if s[i]=="*":
+      r+="×"
+      i+=1
+    elif s[i]=="/":
+      r+="÷"
+      i+=1
+    elif s[i:i+5] in atd:
+      r+=atd[s[i:i+5]]
+      i+=5
+    else:
+      r+=s[i]
+      i+=1
+  return r
