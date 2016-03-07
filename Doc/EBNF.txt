@@ -6,3 +6,34 @@ FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (','Var'='F
 Function ::= '(' FunctionHead '↦' Final ')'
 FunctionCall ::= Atom '(' (Final (',' Final)* ) + ')'
 Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋' | 'ⅈ' | '⊤' | '⊥'
+UnaryS ::= '~' | '∔' | '∸' | '∁' | 'ℑ' | 'ℜ' | '∋' | 'ω'
+Unary  ::= Atom | UnaryS Unary
+Exp ::= Unary | UnaryS '^' Exp
+MulS ::= '×' | '÷' | '%'
+Mul ::= Mul MulS Exp
+AddS ::= '+' | '-'
+Add ::= Mul | Add AddS Mul
+NumCS ::= '<' | '>' | '≤' | '≥'
+NumCH ::= NumCS Add
+NumC ::= Add NumCH*
+NumES ::= '≟' | '≠'
+NumEH ::= NumES NumC
+NumE ::= NumC NumEH*
+Int ::= NumE | Int '∩' NumE
+UnionS ::= '\' | '∪'
+Union ::= Int | Union UnionS Int
+SetCS ::= '⊂' | '⊃' | '⊆' | '⊇' | '∈'
+SetCH ::= SetCS Union
+SetC ::= Union SetCH*
+SetES ::= '≡' | '≢'
+SetEH ::= SetES SetC
+SetE ::= SetC SetEH*
+And ::= SetE | And '∧' SetE
+Or ::= And | Or '∨' And
+Ite ::= Or | Or '→' Ite '↛' Ite
+FinalS ::= 'Π' | 'Σ'
+Final ::= Ite | Var FinalS Final
+Ass ::= Var '=' Final
+AssFn ::= Var FunctionHead '=' Final
+Line ::= Ass | AssFn | Final
+Program ::= (Line ';'+)* (Line ';'*)?
