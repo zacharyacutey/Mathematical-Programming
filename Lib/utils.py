@@ -1,4 +1,4 @@
-atd=None
+atd={"$img":"ℜ"}
 def ascii_to_unicode(s):
   i=0
   r=""
