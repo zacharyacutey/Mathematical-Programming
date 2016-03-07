@@ -1,6 +1,7 @@
 from __future__ import division
 from sympy import floor,ceiling,Abs,re,im
 from NumberObject import Number
+#To do: implement conditions of numbers that have a definite evaluation
 class Function:
   def __init__(self,val):
     self.val=val
@@ -45,3 +46,41 @@ class Function:
     raise TypeError
   def IsMemberOf(self,arg):
     raise TypeError
+  def And(self,arg):
+    raise TypeError
+  def Or(self,arg):
+    raise TypeError
+  def Intersection(self,arg):
+    raise TypeError
+  def Union(self,arg):
+    raise TypeError
+  def SetDifference(self,arg):
+    raise TypeError
+  def Less(self,arg):
+    raise TypeError
+  def LessEqual(self,arg):
+    raise TypeError
+  def Greater(self,arg):
+    raise TypeError
+  def GreaterEqual(self,arg):
+    raise TypeError
+  def Equal(self,arg):
+    return Number(0)
+  def NotEqual(self,arg):
+    return Number(1)
+  def Subset(self,arg):
+    raise TypeError
+  def SubsetEqual(self,arg):
+    raise TypeError
+  def Superset(self,arg):
+    raise TypeError
+  def SupersetEqual(self,arg):
+    raise TypeError
+  def SetEqual(self,arg):
+    raise TypeError
+  def SetNotEqual(self,arg):
+    raise TypeError
+  def IfThenElse(self,first,last):
+    raise TypeError
+  def Call(self,*args):
+    return self.val(*args)
