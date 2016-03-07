@@ -9,7 +9,7 @@ def ascii_to_unicode(s):
     elif s[i]=="/":
       r+="÷"
       i+=1
-    elif s[i:i+5] in atd:
+    elif s[i:i+5] in atd.keys():
       r+=atd[s[i:i+5]]
       i+=5
     else:
