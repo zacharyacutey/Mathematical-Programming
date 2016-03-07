@@ -31,16 +31,32 @@ class Function:
   def AbsoluteValue(self):
     raise TypeError
   def Add(self,arg):
+    if arg.val==0:
+      return self.Positive()
     raise TypeError
   def Minus(self,arg):
+    if arg.val==0:
+      raise self.Positive()
     raise TypeError
   def Multiply(self,arg):
+    if arg.val==0:
+      return Number(0)
+    if arg.val==1:
+      return self.Positive()
     raise TypeError
   def Divide(self,arg):
+    if arg.val==0:
+      raise DivideByZeroError
+    if arg.val==1:
+      return self.Positive()
     raise TypeError
   def Modulo(self,arg):
     raise TypeError
   def Power(self,arg):
+    if arg.val==0:
+      return Number(1)
+    if arg.val==1:
+      return self.Positive()
     raise TypeError
   def HasMember(self,arg):
     raise TypeError
