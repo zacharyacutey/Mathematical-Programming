@@ -1,3 +1,5 @@
+Uses python's variant of the EBNF notation
+
 Number ::= '0' | '1'..'9' ('0'..'9')*
 Var ::= ('A'..'Z'|'a'..'z') ('A'..'Z'|'a'..'z'|'0'..'9')*
 Finite ::= '{}' | '{' Final (',' Final)* '}'
@@ -33,7 +35,7 @@ Or ::= And | Or '∨' And
 Ite ::= Or | Or '→' Ite '↛' Ite
 FinalS ::= 'Π' | 'Σ'
 Final ::= Ite | Var FinalS Final
-Ass ::= Var '=' Final
-AssFn ::= Var FunctionHead '=' Final
-Line ::= Ass | AssFn | Final
+Assgn ::= Var '=' Final
+AssgnFn ::= Var FunctionHead '=' Final
+Line ::= Assgn | AssgnFn | Final
 Program ::= (Line ';'+)* (Line ';'*)?
