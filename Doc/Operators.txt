@@ -1,11 +1,7 @@
 This document DOES NOT SHOW THE ORDER OF OPERATIONS
-Constants:
-        ι:
-                The imaginary unit, sqrt(-1)
-        ⊤:
-                True: a.k.a. 1 (it is 1)
-        ⊥:
-                False: a.k.a. 0 (it is 0)
+
+I removed the constants
+
 Prefix Unary Operators:
         +n:
                 Identity function, returns n
