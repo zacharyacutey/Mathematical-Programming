@@ -104,7 +104,7 @@ class Finite:
         if not ( i in arg.val ):
           t=t.Union(i)
       return t
-    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg).Not()))
+    return Infinite(lambda n : (n,n.IsMemberOf(self).And(n.IsMemberOf(arg).Not())))
   def Less(self,arg):
     raise TypeError
   def LessEqual(self,arg):
