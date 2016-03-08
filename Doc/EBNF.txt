@@ -8,7 +8,7 @@ Infinite ::='{:}' | '{' Final ':' Final '}'
 FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (','Var'='Final')*
 Function ::= '(' FunctionHead '↦' Final ')'
 FunctionCall ::= Atom '(' (Final (',' Final)* ) + ')'
-Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋' | 'ⅈ' | '⊤' | '⊥'
+Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋' | 'ι' | '⊤' | '⊥'
 UnaryS ::= '~' | '∔' | '∸' | '∁' | 'ℑ' | 'ℜ' | '∋' | 'ω'
 Unary  ::= Atom | UnaryS Unary
 Exp ::= Unary | UnaryS '^' Exp
