@@ -1,6 +1,6 @@
+from __future__ import division
 from NumberObject import Number
 from InfiniteObject import Infinite
-from __future__ import division
 from sympy import ceiling,floor,re,im,Abs
 sortNumber=lambda n : [(Number(j) if type(j)!=tuple else Finite(list(j)))for j in sorted([(i.val if type(i.val)!=list else tuple(sortNumber(i.val))) for i in n])]
 class Finite:
