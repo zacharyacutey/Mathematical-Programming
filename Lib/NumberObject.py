@@ -1,6 +1,5 @@
 #Requires sympy and any of its dependencies
 from __future__ import division
-print(u"αμπλ")
 from sympy import re,im,Abs,floor,ceiling
 from sympy import Number as _Number
 class Number:
