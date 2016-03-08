@@ -30,7 +30,7 @@ def remove_w(s):
       i+=1
   return r
 def alphabetic(c):
-  return c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" #To put the special chars in the is_unary code
+  return c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def numeric(c):
   return c in "0123456789"
 def alphanumeric(c):
@@ -52,4 +52,5 @@ def replace_unary(s):
       r.append(unary_char(s[i]))
     else:
       r.append(c)
-  return ''.join r
+  return ''.join(r)
+
