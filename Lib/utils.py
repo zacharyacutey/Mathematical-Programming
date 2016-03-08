@@ -85,4 +85,4 @@ def replace_unary(s):
     else:
       r.append(c)
   return ''.join(r)
-
+def coding(s):return replace_unary(remove_w(ascii_to_unicode(s)))
