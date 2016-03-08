@@ -115,8 +115,10 @@ class Finite:
     raise TypeError
   def Equal(self,arg):
     if arg.Type=="Infinite":
+      r=True
       for i in self.val:
-        if 
+        if i.IsMemberOf(arg).Not():
+          return False
     return Number(self.val==arg.val)
   def NotEqual(self,arg):
     return self.Equal(arg).Not()
