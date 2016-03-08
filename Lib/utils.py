@@ -1,4 +1,36 @@
-atd={"$img":"ℑ"}
+atd={
+  "$img":"ℑ",
+  "$rea":"ℜ",
+  "$ift":"→",
+  "$fun":"↦",
+  "$els":"↛",
+  "$com":"∁",
+  "$mem":"∈",
+  "$unp":"∋",
+  "$pro":"Π",
+  "$sum":"Σ"
+  "$pos":"∔",
+  "$and":"∧",
+  "$ior":"∨",
+  "$int":"∩",
+  "$uni":"∪",
+  "$neg":"∸",
+  "$equ":"≟",
+  "$neq":"≠",
+  "$seq":"≡",
+  "$sne":"≢",
+  "$leq":"≤",
+  "$geq":"≥",
+  "$sub":"⊂",
+  "$sup":"⊃",
+  "$sbe":"⊆",
+  "$spe":"⊇",
+  "$ceb":"⌈",
+  "$cee":"⌉",
+  "$flb":"⌊",
+  "$fle":"⌋",
+  "$len":"ω"
+}
 #Just some random utilities that don't fit in to the (soon to be) massive compiler/tokenizer/transpiler/interpreter/parser page
 #To Do:
 #ALLOW WINDOWS FUNCTIONALITY!!!!!!!!!!!!!!!!
