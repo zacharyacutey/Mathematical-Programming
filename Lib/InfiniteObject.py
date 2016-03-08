@@ -1,5 +1,5 @@
-from NumberObject import Number
 from __future__ import division
+from NumberObject import Number
 from sympy import re,im,Abs,floor,ceiling
 from sympy import Number as _Number
 import inspect
