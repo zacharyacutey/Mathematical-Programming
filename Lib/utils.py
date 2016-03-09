@@ -44,12 +44,12 @@ def ascii_to_unicode(s):
     elif s[i]=="/":
       r+=u"\xf7"
       i+=1
-    elif s[i:i+5] in atd.keys():
-      r+=atd[s[i:i+5]]
-      i+=5
+    elif s[i:i+4] in atd.keys():
+      r+=atd[s[i:i+4]]
+      i+=4
     else:
       r+=s[i]
-      i+=1
+      i+=4
   return r
 def remove_w(s):
   i=0
@@ -83,6 +83,6 @@ def replace_unary(s):
     if is_unary(s,i):
       r.append(unary_char(s[i]))
     else:
-      r.append(c)
+      r.append(s[i])
   return ''.join(r)
 def coding(s):return replace_unary(remove_w(ascii_to_unicode(s)))
