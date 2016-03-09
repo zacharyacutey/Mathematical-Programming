@@ -73,9 +73,9 @@ def is_unary(s,p):
   return not alphanumeric(s[p-1])
 def unary_char(c):
   if c=="+":
-    return "∔"
+    return ascii_to_unicode("$pos")
   if c=="-":
-    return "∸"
+    return ascii_to_unicode("$neg")
   return c
 def replace_unary(s):
   r=[]
