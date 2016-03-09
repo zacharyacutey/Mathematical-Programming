@@ -84,8 +84,11 @@ class Infinite:
   def Modulo(self,arg):
     raise TypeError
   def HasMember(self,arg):
-    val=DoSomething(len(inspect.argspec(self.val)[0])+len(inspect.argspec(self.val)[1] if inspect.argspec(self.val)[1]!=None else []))
+    val=DoSomething(len(inspect.getargspec(self.val)[0])+len(inspect.getargspec(self.val)[1] if inspect.getargspec(self.val)[1]!=None else []))
     for i in val:
+      if type(i)!=tuple and type(i)!=list:
+        if self.val(i)[1].val!=0:
+          return Number(1)
       if self.val(*i)[1].val!=0:
         return Number(1)
     return Number(0)
@@ -118,6 +121,9 @@ class Infinite:
   def SubsetEqual(self,arg):
     val=DoSomething(len(inspect.argspec(self.val)[0])+len(inspect.argspec(self.val)[1] if inspect.argspec(self.val)[1]!=None else []))
     for i in val:
+      if type(i)!=tuple and type(i)!=list:
+        if self.val(i)[1].Equal(Number(0)):
+          return Number(0)
       if self.val(*i)[1].Equal(Number(0)):
         return Number(0)
     return Number(1)
