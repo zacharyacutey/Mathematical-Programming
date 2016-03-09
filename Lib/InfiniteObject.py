@@ -11,12 +11,12 @@ SET_OF_ALL=set()
 for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
     if not j==0:
-      SET_OF_ALL.add(_Number(i)/j)
+      SET_OF_ALL.add(Number(_Number(i)/j))
 def DoSomethingHelper(arg): #Am in no way sure how to describe this
   t=set()
   for i in arg:
     for j in SET_OF_ALL:
-      t.add(i+j)
+      t.add(i.Add(j))
   return t
 def DoSomething(arg):
   t=set()
