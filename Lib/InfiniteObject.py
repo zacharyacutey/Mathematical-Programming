@@ -89,8 +89,6 @@ class Infinite:
       if type(i)!=tuple and type(i)!=list:
         if self.val(i)[1].val!=0:
           return Number(1)
-      if self.val(*i)[1].val!=0:
-        return Number(1)
     return Number(0)
   def IsMemberOf(self,arg):
     return arg.HasMember(self)
