@@ -1,3 +1,4 @@
+#TODO, add unicode escapes!
 atd={
   "$img":"ℑ",
   "$rea":"ℜ",
