@@ -1,36 +1,35 @@
-#TODO, add unicode escapes!
 atd={
-  "$img":"ℑ",
-  "$rea":"ℜ",
-  "$ift":"→",
-  "$fun":"↦",
-  "$els":"↛",
-  "$com":"∁",
-  "$mem":"∈",
-  "$unp":"∋",
-  "$pro":"Π",
-  "$sum":"Σ"
-  "$pos":"∔",
-  "$and":"∧",
-  "$ior":"∨",
-  "$int":"∩",
-  "$uni":"∪",
-  "$neg":"∸",
-  "$equ":"≟",
-  "$neq":"≠",
-  "$seq":"≡",
-  "$sne":"≢",
-  "$leq":"≤",
-  "$geq":"≥",
-  "$sub":"⊂",
-  "$sup":"⊃",
-  "$sbe":"⊆",
-  "$spe":"⊇",
-  "$ceb":"⌈",
-  "$cee":"⌉",
-  "$flb":"⌊",
-  "$fle":"⌋",
-  "$len":"ω"
+  '$uni': u'\u222a',
+  '$img': u'\u2111',
+  '$pos': u'\u2214',
+  '$neg': u'\u2238',
+  '$equ': u'\u225f',
+  '$els': u'\u219b',
+  '$ior': u'\u2228',
+  '$rea': u'\u211c',
+  '$pro': u'\u03a0',
+  '$leq': u'\u2264',
+  '$unp': u'\u220b',
+  '$neq': u'\u2260',
+  '$seq': u'\u2261',
+  '$len': u'\u03c9',
+  '$mem': u'\u2208',
+  '$flb': u'\u230a',
+  '$fle': u'\u230b',
+  '$and': u'\u2227',
+  '$ift': u'\u2192',
+  '$sup': u'\u2283',
+  '$sum': u'\u03a3',
+  '$int': u'\u2229',
+  '$cee': u'\u2309',
+  '$sbe': u'\u2286',
+  '$sub': u'\u2282',
+  '$spe': u'\u2287',
+  '$fun': u'\u21a6',
+  '$com': u'\u2201',
+  '$sne': u'\u2262',
+  '$geq': u'\u2265',
+  '$ceb': u'\u2308'
 }
 #Just some random utilities that don't fit in to the (soon to be) massive compiler/tokenizer/transpiler/interpreter/parser page
 #To Do:
@@ -40,10 +39,10 @@ def ascii_to_unicode(s):
   r=""
   while i<len(s):
     if s[i]=="*":
-      r+="×"
+      r+=u"\xd7"
       i+=1
     elif s[i]=="/":
-      r+="÷"
+      r+=u"\xf7"
       i+=1
     elif s[i:i+5] in atd.keys():
       r+=atd[s[i:i+5]]
