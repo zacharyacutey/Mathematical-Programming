@@ -91,3 +91,30 @@ def replace_unary(s):
       r.append(s[i])
   return ''.join(r)
 def coding(s):return replace_unary(remove_w(ascii_to_unicode(s)))
+def next_sep(s,p):
+  r=""
+  if alphabeltic(s[p]):
+    i=p
+    while i<len(s):
+      if alphanumeric(s[i]):
+        r+=s[i]
+      else:
+        return r
+      i+=1
+  elif numeric(s[p]):
+    i=p
+    while i<len(s):
+      if numeric(s[i]):
+        r+=s[i]
+      else:
+        return r
+  else:
+    return s[i]
+def sep(s):
+  i=0
+  r=[]
+  while i<len(s):
+    u=next_sep(s,i)
+    r.append(u)
+    i+=len(u)
+  return r
