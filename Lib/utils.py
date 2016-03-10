@@ -93,7 +93,7 @@ def replace_unary(s):
 def coding(s):return replace_unary(remove_w(ascii_to_unicode(s)))
 def next_sep(s,p):
   r=""
-  if alphabeltic(s[p]):
+  if alphabetic(s[p]):
     i=p
     while i<len(s):
       if alphanumeric(s[i]):
