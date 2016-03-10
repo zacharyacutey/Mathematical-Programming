@@ -1,5 +1,5 @@
-Uses python's variant of the EBNF notation
-The backslash is a backslash, not an escaped quote!
+Uses a varaint of python's variant of the EBNF notation, as in python: there is no specs of the EBNF variant
+The backslash is just a plain backslash
 
 Number ::= '0' | '1'..'9' ('0'..'9')*
 Var ::= ('A'..'Z'|'a'..'z') ('A'..'Z'|'a'..'z'|'0'..'9')*
