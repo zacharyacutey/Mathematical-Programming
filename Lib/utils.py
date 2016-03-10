@@ -108,8 +108,9 @@ def next_sep(s,p):
         r+=s[i]
       else:
         return r
+      i+=1
   else:
-    return s[i]
+    return s[p]
 def sep(s):
   i=0
   r=[]
