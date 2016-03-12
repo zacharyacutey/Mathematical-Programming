@@ -32,9 +32,6 @@ atd={
   '$ceb': u'\u2308'
 }
 
-S_NUMBER=0
-S_SYMBOL=1
-S_VARIABLE=2
 
 def ascii_to_unicode(s):
   i=0
