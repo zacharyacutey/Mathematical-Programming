@@ -1,7 +1,7 @@
 from __future__ import division
 from NumberObject import Number
 from sympy import re,im,Abs,floor,ceiling
-from sympy import Number as _Number
+from sympy import S as _Number
 import inspect
 MIN_N=-100
 MAX_N=100
