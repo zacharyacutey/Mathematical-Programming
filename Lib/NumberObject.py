@@ -1,7 +1,7 @@
 #Requires sympy and any of its dependencies
 from __future__ import division
 from sympy import re,im,Abs,floor,ceiling
-from sympy import Number as _Number
+from sympy import S as _Number
 class Number:
   def __init__(self,val):
     self.val=_Number(val)
