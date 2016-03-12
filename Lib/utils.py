@@ -101,7 +101,7 @@ def next_sep(s,p):
       if alphanumeric(s[i]):
         r+=s[i]
       else:
-        return (r,S_VARIABLE)
+        return r
       i+=1
   elif numeric(s[p]):
     i=p
@@ -109,10 +109,11 @@ def next_sep(s,p):
       if numeric(s[i]):
         r+=s[i]
       else:
-        return (r,S_NUMBER)
+        return r
       i+=1
   else:
-    return (s[p],S_SYMBOL)
+    return s[p]
+  return r
 def sep(s):
   i=0
   r=[]
