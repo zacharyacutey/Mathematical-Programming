@@ -1,11 +1,14 @@
-Uses a varaint of python's variant of the EBNF notation, as in python: there is no specs of the EBNF variant
-The backslash is just a plain backslash
+EBNF variant is EBNF for XML, with the extension of:
+ '<CHAR1>' .. '<CHAR2>'
+Is all of the unicode characters from the unicode value of CHAR1 to CHAR2 (including CHAR2)
+The backslash is just a plain backslash, and omega is just little greek omega,
+and the greek capitals are greek capitals
 
 Number ::= '0' | '1'..'9' ('0'..'9')*
 Var ::= ('A'..'Z'|'a'..'z') ('A'..'Z'|'a'..'z'|'0'..'9')*
 Finite ::= '{}' | '{' Final (',' Final)* '}'
 Infinite ::='{:}' | '{' Final ':' Final '}'
-FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (','Var'='Final')*
+FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (',' Var '=' Final)*
 Function ::= '(' FunctionHead '↦' Final ')'
 FunctionCall ::= Atom '(' (Final (',' Final)* ) + ')'
 Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋'
@@ -13,7 +16,7 @@ UnaryS ::= '~' | '∔' | '∸' | '∁' | 'ℑ' | 'ℜ' | '∋' | 'ω'
 Unary  ::= Atom | UnaryS Unary
 Exp ::= Unary | UnaryS '^' Exp
 MulS ::= '×' | '÷' | '%'
-Mul ::= Mul MulS Exp
+Mul ::= Exp | Mul MulS Exp
 AddS ::= '+' | '-'
 Add ::= Mul | Add AddS Mul
 NumCS ::= '<' | '>' | '≤' | '≥'
@@ -39,4 +42,3 @@ Final ::= Ite | Var FinalS Final
 Assgn ::= Var '=' Final
 AssgnFn ::= Var FunctionHead '=' Final
 Line ::= Assgn | AssgnFn | Final
-Program ::= (Line ';'+)* (Line ';'*)?
