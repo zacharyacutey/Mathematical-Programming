@@ -90,7 +90,7 @@ def replace_unary(s):
       r.append(s[i])
   return ''.join(r)
 def coding(s):return replace_unary(remove_w(ascii_to_unicode(s)))
-def next_sep(s,p):
+def next_lex(s,p):
   r=""
   if alphabetic(s[p]):
     i=p
@@ -111,11 +111,11 @@ def next_sep(s,p):
   else:
     return s[p]
   return r
-def sep(s):
+def lex(s):
   i=0
   r=[]
   while i<len(s):
-    u=next_sep(s,i)
+    u=next_lex(s,i)
     r.append(u)
     i+=len(u)
   return r
