@@ -138,3 +138,7 @@ class Infinite:
     raise TypeError
   def Call(self,*args):
     raise TypeError
+  def InfiniteSum(self):
+    raise TypeError
+  def InfiniteProduct(self):
+    raise TypeError
