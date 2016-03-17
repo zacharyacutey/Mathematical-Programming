@@ -1,6 +1,7 @@
 from __future__ import division
 from sympy import floor,ceiling,Abs,re,im
 from NumberObject import Number
+from InfiniteObject import SET_OF_ALL,DoSomething
 #To do: implement conditions of numbers that have a definite evaluation
 class Function:
   def __init__(self,val):
@@ -100,3 +101,13 @@ class Function:
     raise TypeError
   def Call(self,*args):
     return self.val(*args)
+  def InfiniteSum(self):
+    r=Number(0)
+    for i in DoSomething(1):
+      r=r.Add(self.val(i))
+    return r
+  def InfiniteProduct(self):
+    r=Number(1)
+    for i in DoSomething(1):
+      r=r.Multiply(self.val(i))
+    return r
