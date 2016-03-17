@@ -2,6 +2,8 @@ from __future__ import division
 from NumberObject import Number
 from sympy import re,im,Abs,floor,ceiling
 from sympy import S as _Number
+import sympy
+import copy
 import inspect
 MIN_N=-100
 MAX_N=100
@@ -12,6 +14,11 @@ for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
     if not j==0:
       SET_OF_ALL.add(Number(_Number(i)/j))
+NEW_SET=set()
+for i in SET_OF_ALL:
+  for j in SET_OF_ALL:
+    NEW_SET.add(i.Add(j.Multiply(Number(sympy.sqrt(-1)))))
+SET_OF_ALL=NEW_SET
 def DoSomethingHelper(arg): #Am in no way sure how to describe this
   t=set()
   for i in arg:
