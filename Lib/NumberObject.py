@@ -171,4 +171,8 @@ class Number:
       return last.Positive()
     return first.Positive()
   def Call(self,*args):
-   raise TypeError
+    raise TypeError
+  def InfiniteSum(self):
+    raise TypeError
+  def InfiniteProduct(self):
+    raise TypeError
