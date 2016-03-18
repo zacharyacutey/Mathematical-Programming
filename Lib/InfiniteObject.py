@@ -7,7 +7,7 @@ import copy
 import inspect
 MIN_N=-100
 MAX_N=100
-MIN_D=-100 #Duh, forgot a negative sign
+MIN_D=1 #Duh, forgot a negative sign
 MAX_D=100
 SET_OF_ALL=set()
 for i in range(MIN_N,MAX_N+1):
