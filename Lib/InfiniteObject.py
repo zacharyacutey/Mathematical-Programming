@@ -20,6 +20,8 @@ for i in SET_OF_ALL:
   for j in SET_OF_ALL:
     NEW_SET.add(i.Add(j.Multiply(Number(sympy.sqrt(-1)))))
 SET_OF_ALL=NEW_SET
+SET_OF_ALL_={i.val for i in SET_OF_ALL}
+SET_OF_ALL={Number(i) for i in SET_OF_ALL_}
 def DoSomethingHelper(arg): #Am in no way sure how to describe this
   t=set()
   for i in arg:
