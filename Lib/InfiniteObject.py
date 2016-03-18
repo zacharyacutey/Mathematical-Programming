@@ -5,10 +5,11 @@ from sympy import S as _Number
 import sympy
 import copy
 import inspect
-MIN_N=-100
-MAX_N=100
-MIN_D=1 #Duh, forgot a negative sign
-MAX_D=100
+#Put it at such a non-accurate level so it would eval quicker
+MIN_N=-10
+MAX_N=10
+MIN_D=1
+MAX_D=10
 SET_OF_ALL=set()
 for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
