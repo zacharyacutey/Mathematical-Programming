@@ -11,7 +11,7 @@ class Number:
   def Negative(self):
     return Number(-self.val)
   def Not(self):
-    return Number(self.val==0)
+    return Number(int(self.val==0))
   def Positive(self):
     return Number(self.val)
   def Unpack(self):
@@ -127,33 +127,33 @@ class Number:
       raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
-    return Number(self.val<arg.val)
+    return Number(int(self.val<arg.val))
   def LessEqual(self,arg):
     if arg.Type!="Number":
       raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
-    return Number(self.val<=arg.val)
+    return Number(int(self.val<=arg.val))
   def Greater(self,arg):
     if arg.Type!="Number":
       raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
-    return Number(self.val>arg.val)
+    return Number(int(self.val>arg.val))
   def GreaterEqual(self,arg):
     if arg.Type!="Number":
       raise TypeError
     if im(self.val)!=0 or im(arg.val)!=0:
       raise TypeError
-    return Number(self.val>=arg.val)
+    return Number(int(self.val>=arg.val))
   def Equal(self,arg):
     if arg.Type=="Function" or arg.Type=="Infinite":
       raise TypeError
-    return Number(self.val==arg.val)
+    return Number(int(self.val==arg.val))
   def NotEqual(self,arg):
     if arg.Type=="Function" or arg.Type=="Infinite":
       raise TypeError
-    return Number(self.val!=arg.val)
+    return Number(int(self.val!=arg.val))
   def Subset(self,arg):
     raise TypeError
   def SubsetEqual(self,arg):
