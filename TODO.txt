@@ -1,2 +1,1 @@
-Must make the algorithm for the set of all more efficient, >MUST< (it lags so much)
-                                                           ^^^^^^
+I finished the InfiniteSum and InfiniteProduct bugs, turned out it was due to pass by reference
