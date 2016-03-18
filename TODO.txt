@@ -4,11 +4,13 @@ that for some reason evaluates to 1
 
 a.k.a.
 
->>> Function(lambda n : n.IsMemberOf(Finite(Number(1),Number(2))).InfiniteSum().val
+>>> Function(lambda n : n.IsMemberOf(Finite(Number(1),Number(2)))).InfiniteSum().val
 1
 
-it should be 2, since the sum of the value of that functions is 2, since there are two members, both definitely in SET_OF_ALL
+it should be 2, since the sum of the value of that function is 2, since there are two members, both definitely in SET_OF_ALL
 
 and for my sake, to implement string methods for evaluation!!!
 
 THEN SOMEONE HELP ME WITH THE PARSER!!!!!!
+
+No-one has even viewed this code besides me!!!!
