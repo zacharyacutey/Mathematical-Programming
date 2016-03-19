@@ -154,4 +154,4 @@ class Finite:
   def InfiniteProduct(self):
     raise TypeError
   def __str__(self):
-    return str({str(i) for i in self.val}
+    return str({str(i) for i in self.val})
