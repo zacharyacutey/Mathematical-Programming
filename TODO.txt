@@ -1,1 +1,2 @@
-I finished the InfiniteSum and InfiniteProduct bugs, turned out it was due to pass by reference
+Make it so it goes >much< faster
+The complement of an InfiniteSet is taking minutes to load, so it may be an infinite loop
