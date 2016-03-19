@@ -2,7 +2,6 @@ from __future__ import division
 from sympy import floor,ceiling,Abs,re,im
 from NumberObject import Number
 from InfiniteObject import SET_OF_ALL,DoSomething
-#To do: implement conditions of numbers that have a definite evaluation
 class Function:
   def __init__(self,val):
     self.val=val
