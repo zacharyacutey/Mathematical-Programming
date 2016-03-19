@@ -111,3 +111,5 @@ class Function:
     for i in DoSomething(1):
       r=r.Multiply(self.val(i))
     return r
+  def __str__(self):
+    return "Function("+str(self.val)+")"
