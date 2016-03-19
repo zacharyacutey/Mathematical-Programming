@@ -152,3 +152,5 @@ class Infinite:
     raise TypeError
   def InfiniteProduct(self):
     raise TypeError
+  def __str__(self):
+    return "Infinite("+str(self.val)+")"
