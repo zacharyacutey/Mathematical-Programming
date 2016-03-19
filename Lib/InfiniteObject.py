@@ -13,7 +13,7 @@ MAX_D=10
 SET_OF_ALL=set()
 for i in range(MIN_N,MAX_N+1):
   for j in range(MIN_D,MAX_D+1):
-    if not j==0:
+    if j!=0:
       SET_OF_ALL.add(Number(_Number(i)/j))
 NEW_SET=set()
 for i in SET_OF_ALL:
