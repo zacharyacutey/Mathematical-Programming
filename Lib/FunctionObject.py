@@ -109,6 +109,8 @@ class Function:
   def InfiniteProduct(self):
     r=Number(1)
     for i in DoSomething(1):
+      if r.val==0:
+        return r #0 times any number is 0
       r=r.Multiply(self.val(i))
     return r
   def __str__(self):
