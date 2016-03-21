@@ -225,4 +225,4 @@ def token_name(l):
   elif l==ascii_to_unicode('$ceb'):
     return 'T_CEILINGBEGIN'
 def tokenize(s):
-  return [(i,token(i)) for i in lex(coding(s))]
+  return [(i,token_name(i)) for i in lex(coding(s))]
