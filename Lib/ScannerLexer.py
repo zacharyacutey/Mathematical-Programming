@@ -150,3 +150,9 @@ def token_name(l):
     return 'T_ISEQUAL'
   elif l==ascii_to_unicode('$els'):
     return 'T_ELSE'
+  elif i==ascii_to_unicode('$ior'):
+    return 'T_OR'
+  elif i==ascii_to_unicode('$rea'):
+    return 'T_REAL'
+  elif i==ascii_to_unicode('$pro'):
+    return 'T_PRODUCT'
