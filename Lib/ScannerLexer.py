@@ -154,6 +154,8 @@ def token_name(l):
     return 'T_EQUAL'
   elif l==';':
     return 'T_SEMICOLON'
+  elif l=='\\':
+    return 'T_SETMINUS'
   elif l=='(':
     return 'T_LEFTPAREN'
   elif l==')':
@@ -222,3 +224,5 @@ def token_name(l):
     return 'T_GREATEREQUAL'
   elif l==ascii_to_unicode('$ceb'):
     return 'T_CEILINGBEGIN'
+def tokenize(s):
+  return [(i,token(i)) for i in lex(coding(s))]
