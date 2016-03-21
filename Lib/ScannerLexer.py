@@ -138,6 +138,30 @@ def token_name(l):
     return 'T_POWER'
   elif l=='~':
     return 'T_NOT'
+  elif l=='<':
+    return 'T_LESS'
+  elif l=='>':
+    return 'T_GREATER'
+  elif l==':':
+    return 'T_COLON'
+  elif l=='{':
+    return 'T_LEFTBRACE'
+  elif l=='}':
+    return 'T_RIGHTBRACE'
+  elif l==',':
+    return 'T_COMMA'
+  elif l=='=':
+    return 'T_EQUAL'
+  elif l==';':
+    return 'T_SEMICOLON'
+  elif l=='(':
+    return 'T_LEFTPAREN'
+  elif l==')':
+    return 'T_RIGHTPAREN'
+  elif l=='[':
+    return 'T_LEFTBRACKET'
+  elif l==']':
+    return 'T_RIGHTBRACKET'
   elif l==ascii_to_unicode('$uni'):
     return 'T_UNION'
   elif l==ascii_to_unicode('$img'):
@@ -150,9 +174,51 @@ def token_name(l):
     return 'T_ISEQUAL'
   elif l==ascii_to_unicode('$els'):
     return 'T_ELSE'
-  elif i==ascii_to_unicode('$ior'):
+  elif l==ascii_to_unicode('$ior'):
     return 'T_OR'
-  elif i==ascii_to_unicode('$rea'):
+  elif l==ascii_to_unicode('$rea'):
     return 'T_REAL'
-  elif i==ascii_to_unicode('$pro'):
+  elif l==ascii_to_unicode('$pro'):
     return 'T_PRODUCT'
+  elif l==ascii_to_unicode('$leq'):
+    return 'T_LESSEQUAL'
+  elif l==ascii_to_unicode('$unp'):
+    return 'T_UNPACK'
+  elif l==ascii_to_unicode('$neq'):
+    return 'T_NOTEQUAL'
+  elif l==ascii_to_unicode('$seq'):
+    return 'T_SETEQUAL'
+  elif l==ascii_to_unicode('$len'):
+    return 'T_LENGTH'
+  elif l==ascii_to_unicode('$mem'):
+    return 'T_MEMBER'
+  elif l==ascii_to_unicode('$flb'):
+    return 'T_BEGINFLOOR'
+  elif l==ascii_to_unicode('$fle'):
+    return 'T_ENDFLOOR'
+  elif l==ascii_to_unicode('$and'):
+    return 'T_AND'
+  elif l==ascii_to_unicode('$ift'):
+    return 'T_IF'
+  elif l==ascii_to_unicode('$sup'):
+    return 'T_SUPERSET'
+  elif l==ascii_to_unicode('$sum'):
+    return 'T_SUM'
+  elif l==ascii_to_unicode('$int'):
+    return 'T_INTERSECT'
+  elif l==ascii_to_unicode('$cee'):
+    return 'T_CEILINGEND'
+  elif l==ascii_to_unicode('$sbe'):
+    return 'T_SUBSETEQUAL'
+  elif l==ascii_to_unicode('$spe'):
+    return 'T_SUBSET'
+  elif l==ascii_to_unicode('$fun'):
+    return 'T_FUNCTION'
+  elif l==ascii_to_unicode('$com'):
+    return 'T_COMPLEMENT'
+  elif l==ascii_to_unicode('$sne'):
+    return 'T_SETNOTEQUAL'
+  elif l==ascii_to_unicode('$geq'):
+    return 'T_GREATEREQUAL'
+  elif l==ascii_to_unicode('$ceb'):
+    return 'T_CEILINGBEGIN'
