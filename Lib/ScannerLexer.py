@@ -37,11 +37,11 @@ def ascii_to_unicode(s):
   i=0
   r=""
   while i<len(s):
-    if s[i]=="*":
-      r+=u"\xd7"
+    if s[i]==u"\xd7":
+      r+="*"
       i+=1
-    elif s[i]=="/":
-      r+=u"\xf7"
+    elif s[i]==u"\xf7":
+      r+="/"
       i+=1
     elif s[i:i+4] in atd.keys():
       r+=atd[s[i:i+4]]
@@ -119,3 +119,34 @@ def lex(s):
     r.append(u)
     i+=len(u)
   return r
+def token_name(l):
+  if numeric(l[0]):
+    return 'T_NUMBER'
+  elif alphabetic(l[0]):
+    return 'T_VARIABLE'
+  elif l=='+':
+    return 'T_ADD'
+  elif l=='-':
+    return 'T_MINUS'
+  elif l=='*':
+    return 'T_MULTIPLY'
+  elif l=='/':
+    return 'T_DIVIDE'
+  elif l=='%':
+    return 'T_MOD'
+  elif l=='^':
+    return 'T_POWER'
+  elif l=='~':
+    return 'T_NOT'
+  elif l==ascii_to_unicode('$uni'):
+    return 'T_UNION'
+  elif l==ascii_to_unicode('$img'):
+    return 'T_IMAGINARY'
+  elif l==ascii_to_unicode('$pos'):
+    return 'T_POSITIVE'
+  elif l==ascii_to_unicode('$neg'):
+    return 'T_NEGATIVE'
+  elif l==ascii_to_unicode('$equ'):
+    return 'T_ISEQUAL'
+  elif l==ascii_to_unicode('$els'):
+    return 'T_ELSE'
