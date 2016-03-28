@@ -1,4 +1,8 @@
 from ScannerLexer import *
-
-
-#Right about now, I wish python had enums!
+def seperate_lines(s_):
+  s=(";"+s_+";").split(";")
+  r=[]
+  for i in s:
+    if i!="":
+      r.append(i)
+  return r
