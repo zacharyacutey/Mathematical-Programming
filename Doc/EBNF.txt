@@ -11,7 +11,7 @@ Finite ::= '{}' | '{' Final (',' Final)* '}'
 Infinite ::='{:}' | '{' Final ':' Final '}'
 FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (',' Var '=' Final)*
 Function ::= '(' FunctionHead '↦' Final ')'
-FunctionCall ::= Atom '(' (Final (',' Final)* ) + ')'
+FunctionCall ::= Atom '(' Final (',' Final)*   ')'
 Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋'
 UnaryS ::= '~' | '∔' | '∸' | '∁' | 'ℑ' | 'ℜ' | '∋' | 'ω'
 Unary  ::= Atom | UnaryS Unary
