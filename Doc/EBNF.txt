@@ -3,13 +3,14 @@ EBNF variant is EBNF for XML, with the extension of:
 Is all of the unicode characters from the unicode value of CHAR1 to CHAR2 (including CHAR2)
 The backslash is just a plain backslash, and omega is just little greek omega,
 and the greek capitals are greek capitals
-(I may be thinking of changing the function head '='s to ≞, so I don't have to go multiple ='s in Parsing.
+(I may be thinking of changing the function head '='s to ≝, so I don't have to go multiple ='s in Parsing.
+APPARENTLY UBUNTU HAS A GLITCH WITH EQUAL TO BY DEFINITION AND EQUAL BY MEASURE, SO YEAH
 
 Number ::= '0' | '1'..'9' ('0'..'9')*
 Var ::= ('A'..'Z'|'a'..'z') ('A'..'Z'|'a'..'z'|'0'..'9')*
 Finite ::= '{}' | '{' Final (',' Final)* '}'
 Infinite ::='{:}' | '{' Final ':' Final '}'
-FunctionHead ::= Var (',' Var)* (',' Var '=' Final)* | Var '=' Final (',' Var '=' Final)*
+FunctionHead ::= Var (',' Var)* (',' Var '≝' Final)* | Var '≝' Final (',' Var '≝' Final)*
 Function ::= '(' FunctionHead '↦' Final ')'
 FunctionCall ::= Atom '(' Final (',' Final)*   ')'
 Atom ::= Number | Var | Finite | Infinite | Function | FunctionCall | '(' Final ')' | '⌈' Final '⌉' | '[' Final ']' | '⌊' Final  '⌋'
