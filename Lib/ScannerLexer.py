@@ -64,8 +64,8 @@ def remove_w(s):
       i+=1
   else: #Love this!
    return s
-    
   return r
+
 def alphabetic(c):
   return c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def numeric(c):
