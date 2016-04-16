@@ -221,5 +221,7 @@ def token_name(l):
     return 'T_GREATEREQUAL'
   elif l==ascii_to_unicode('$ceb'):
     return 'T_CEILINGBEGIN'
+  elif l==ascii_to_unicode('$def'):
+    return 'T_DEFAULTARGUMENT'
 def tokenize(s):
   return [(i,token_name(i)) for i in lex(coding(s))]
