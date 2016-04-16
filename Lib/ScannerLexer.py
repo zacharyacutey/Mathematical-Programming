@@ -50,8 +50,6 @@ def ascii_to_unicode(s):
     else:
       r+=s[i]
       i+=1
-  else:
-    return s
   return r
 def remove_w(s):
   i=0
@@ -62,8 +60,6 @@ def remove_w(s):
     else:
       r+=s[i]
       i+=1
-  else: #Love this!
-   return s
   return r
 
 def alphabetic(c):
