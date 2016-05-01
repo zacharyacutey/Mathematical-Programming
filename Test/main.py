@@ -13,3 +13,12 @@ def is_Atom(arg):
   else:
     u = arg[1:len(arg)-1]
     return arg[0] == '(' and is_Add(u) and arg[-1]==')'
+def is_UnaryS(arg):
+  return arg==['_']
+def is_Unary(arg):
+  if is_Atom(arg):
+    return True
+  else:
+    return is_UnaryS([arg[0]]) and is_Atom(arg[1:])
+def is_MulS(arg):
+  return arg==['*'] or arg==['/']
