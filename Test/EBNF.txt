@@ -2,7 +2,7 @@
 #A simple arithmetic parser
 NonZero ::= '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
 Digit ::= '0' | NonZero
-Number ::= NonZero Digit*
+Number ::= '0' | NonZero Digit*
 Atom ::= Number | '(' Add ')' 
 UnaryS ::= '_'
 Unary ::= Atom | UnaryS Atom
