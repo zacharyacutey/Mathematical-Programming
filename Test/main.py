@@ -22,3 +22,29 @@ def is_Unary(arg):
     return is_UnaryS([arg[0]]) and is_Atom(arg[1:])
 def is_MulS(arg):
   return arg==['*'] or arg==['/']
+def is_Mul(arg):
+  if is_Unary(arg):
+    return True
+  else:
+    for i in range(len(arg)):
+      u=arg[0:i]
+      t=arg[i:]
+      v=t[1:]
+      w=t[0]
+      if is_Mul(u) and is_MulS([w]) and is_Unary(v):
+        return True
+    return False
+def is_AddS(arg):
+  return arg==['+'] or arg==['-']
+def is_Add(arg):
+  if is_Mul(arg):
+    return True
+  else:
+    for i in range(len(arg)):
+      u=arg[0:i]
+      t=arg[i:]
+      v=t[1:]
+      w=t[0]
+      if is_Add(u) and is_AddS([w]) and is_Mul(v):
+        return True
+    return False
