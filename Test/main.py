@@ -1,3 +1,5 @@
+def lex(arg):
+  return list(arg)
 def is_NonZero(arg): #If a sequence is NonZero
   return arg in [['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9']]
 def is_Digit(arg): #If a sequence is Digit
