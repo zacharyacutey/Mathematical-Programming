@@ -16,7 +16,7 @@ def is_lambda_expression(arg):
       if i == atd['$fun']:
         return True
     elif count < 0:
-      print("DAFUQ? AN ERROR DID APPEAR! I SHOULD BE THE ONLY ONE USING THIS, SO STOP MAKING TYPOS B****!")
+      print("DAFUQ? AN ERROR DID APPEAR! I SHOULD BE THE ONLY ONE USING THIS, SO STOP MAKING TYPOS ZACH!")
       exit()
     else:
       if i == '(':
