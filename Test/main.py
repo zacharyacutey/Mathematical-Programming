@@ -4,4 +4,4 @@ def is_Digit(arg):
   return is_NonZero(arg) or arg==['0']
 def is_Number(arg):
   from functools import reduce
-  return is_NonZero(arg) and reduce(lambda x,y:x and y,map(lambda x : is_Digit(x),arg))
+  return (arg == ['0']) or (is_NonZero(arg) and reduce(lambda x,y:x and y,map(lambda x : is_Digit(x),arg)))
