@@ -1,0 +1,12 @@
+#Just a test for my different compiler techniques. To see which one works, if any.
+#A simple arithmetic parser
+NonZero ::= '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+Digit ::= '0' | NonZero
+Number ::= NonZero Digit*
+Atom ::= Number | '(' Add ')' 
+UnaryS ::= '_'
+Unary ::= Atom | UnaryS Atom
+MulS ::= '*' | '/'
+Mul ::= Unary | Mul MulS Unary
+AddS ::= '+' | '-'
+Add ::= Mul | Add AddS Mul
