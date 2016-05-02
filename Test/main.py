@@ -6,8 +6,12 @@ def is_Digit(arg): #If a sequence is Digit
   return is_NonZero(arg) or arg==['0']
 def is_Number(arg):
   from functools import reduce
+  if arg == []:
+  	return False
   return (arg == ['0']) or (is_NonZero([arg[0]]) and reduce(lambda x,y:x and y,map(lambda x : is_Digit([x]),arg[0:])))
 def is_Atom(arg):
+  if arg==[]:
+  	return False
   if is_Number(arg):
     return True
   else:
@@ -28,11 +32,15 @@ def is_Mul(arg):
   else:
     for i in range(len(arg)):
       u=arg[0:i]
-      t=arg[i:]
-      v=t[1:]
-      w=t[0]
-      if is_Mul(u) and is_MulS([w]) and is_Unary(v):
-        return True
+      if u != []:
+      	t=arg[i:]
+      	if t != []:
+      		v=t[1:]
+      		if v != []:
+      			w=t[0]
+      			if w != '':
+      				if is_Mul(u) and is_MulS([w]) and is_Unary(v):
+    			  		return True
     return False
 def is_AddS(arg):
   return arg==['+'] or arg==['-']
@@ -42,9 +50,13 @@ def is_Add(arg):
   else:
     for i in range(len(arg)):
       u=arg[0:i]
-      t=arg[i:]
-      v=t[1:]
-      w=t[0]
-      if is_Add(u) and is_AddS([w]) and is_Mul(v):
-        return True
+      if u!=[]:
+      	t=arg[i:]
+      	if t !=[]:
+      		v=t[1:]
+      		if v != []:
+      			w=t[0]
+      			if w != []:
+      				if is_Add(u) and is_AddS([w]) and is_Mul(v):
+    		  			return True
     return False
