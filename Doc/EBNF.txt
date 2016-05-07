@@ -1,9 +1,8 @@
-EBNF variant is EBNF for XML, with the extension of:
+EBNF variant is EBNF for XML, with the difference of:
  '<CHAR1>' .. '<CHAR2>'
 Is all of the unicode characters from the unicode value of CHAR1 to CHAR2 (including CHAR2)
 The backslash is just a plain backslash, and omega is just little greek omega,
 and the greek capitals are greek capitals
-(I may be thinking of changing the function head '='s to ≝, so I don't have to have multiple ='s in Parsing.
 
 Number ::= '0' | '1'..'9' ('0'..'9')*
 Var ::= ('A'..'Z'|'a'..'z') ('A'..'Z'|'a'..'z'|'0'..'9')*
