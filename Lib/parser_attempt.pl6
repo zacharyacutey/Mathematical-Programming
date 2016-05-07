@@ -1,13 +1,8 @@
 use v6;
+@f = 1;
 grammar AmplGrammar
 {
-  rule TOP { <line=.Assgn> | <line=.AssgnFn> }
+  rule TOP { (<Line> ;)* }
+  
   token ws { (\h | \s)* }
-}
-
-class AmplGrammarAction
-{
-  method TOP($/) {
-    $/.make($/);
-  }
 }
