@@ -3,6 +3,6 @@ use v6;
 grammar AmplGrammar
 {
   rule TOP { (<Line> ;)* }
-  
+  rule Line { <Assgn> | <AssgnFn> }
   token ws { (\h | \s)* }
 }
