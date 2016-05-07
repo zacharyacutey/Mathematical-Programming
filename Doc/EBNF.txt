@@ -43,3 +43,4 @@ Final ::= Ite | Var FinalS Final
 Assgn ::= Var '=' Final
 AssgnFn ::= Var '('FunctionHead ')' '=' Final
 Line ::= Assgn | AssgnFn
+Program ::= (Line ';')*
