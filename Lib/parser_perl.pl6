@@ -35,5 +35,10 @@ grammar AmplGrammar
   rule Atom { <Number> | <Var> | <Finite> | <Infinite> | <Function> | <FunctionCall> | \( <Final> \) | ⌈ <Final> ⌉ | \[ <Final> \] | ⌊ <Final> ⌋ }
   rule FunctionCall { <Atom> \( <Final> (\,<Final>)* \) }
   rule Function { \( <FunctionHead> ↦ <Final> \) }
+  rule FunctionHead { <Var> (\, <Var>)* (\, <Var> ≝ <Final>)* | <Var> ≝ <Final> (\, <Var> ≝ <Final>)* }
+  rule Infinite { \{\:\} | \{ <Final> \: <Final> \} }
+  rule Finite { \{\} | \{ <Final> (\, <Final>)* \} }
+  token Var { . }
+  token Number { . }
   token ws { (\h | \s)* }
 }
