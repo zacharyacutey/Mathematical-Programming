@@ -5,8 +5,10 @@ grammar AmplGrammar
   rule Line { <Assgn> | <AssgnFn> }
   rule AssgnFn { <Var> \( <FunctionHead> \) \= <Final> }
   rule Assgn { <Var> \= <Final> }
-  rule Var { .* } #Temporary
-  rule Final { .* } #"
-  rule FunctionHead { .* } #"
+  rule Final { <Ite> | <Var> <FinalS> <Final> }
+  rule Ite { . }
+  rule Var { . }
+  rule FinalS { . }
+  rule FunctionHead { . }
   token ws { (\h | \s)* }
 }
