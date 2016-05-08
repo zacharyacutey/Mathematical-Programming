@@ -23,5 +23,12 @@ grammar AmplGrammar
   rule NumEH { <NumES> <NumC> }
   rule NumES { ≟ | ≠ }
   rule NumC { <Add> <NumCH>* }
+  rule NumCH { <NumCS> <Add> }
+  rule NumCS { \< | \> | ≤ | ≥ }
+  rule Add { <Mul> | <Mul> <AddS> <Mul> }
+  rule AddS { \- | \+ }
+  rule Mul { <Exp> | <Mul> <MulS> <Exp> }
+  rule MulS { × | ÷ | \% }
+  rule Exp { <Unary> | <Unary> \^ <Exp> }
   token ws { (\h | \s)* }
 }
