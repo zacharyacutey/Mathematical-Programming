@@ -32,5 +32,8 @@ grammar AmplGrammar
   rule Exp { <Unary> | <Unary> \^ <Exp> }
   rule Unary { <Atom> | <UnaryS> <Unary> }
   rule UnaryS { \~ | ∔ | ∸ | ∁ | ℑ | ℜ | ∋ | ω }
+  rule Atom { <Number> | <Var> | <Finite> | <Infinite> | <Function> | <FunctionCall> | \( <Final> \) | ⌈ <Final> ⌉ | \[ <Final> \] | ⌊ <Final> ⌋ }
+  rule FunctionCall { <Atom> \( <Final> (\,<Final>)* \) }
+  rule Function { \( <FunctionHead> ↦ <Final> \) }
   token ws { (\h | \s)* }
 }
