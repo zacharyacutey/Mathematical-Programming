@@ -36,7 +36,7 @@ SetEH ::= SetES SetC
 SetE ::= SetC SetEH*
 And ::= SetE | And '∧' SetE
 Or ::= And | Or '∨' And
-Ite ::= Or | Or '→' Ite '↛' Ite
+Ite ::= Or | Or '→' Final '↛' Ite
 FinalS ::= 'Π' | 'Σ'
 Final ::= Ite | Var FinalS Final
 Assgn ::= Var '=' Final
