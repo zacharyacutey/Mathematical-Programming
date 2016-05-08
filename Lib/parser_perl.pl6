@@ -30,5 +30,7 @@ grammar AmplGrammar
   rule Mul { <Exp> | <Mul> <MulS> <Exp> }
   rule MulS { × | ÷ | \% }
   rule Exp { <Unary> | <Unary> \^ <Exp> }
+  rule Unary { <Atom> | <UnaryS> <Unary> }
+  rule UnaryS { \~ | ∔ | ∸ | ∁ | ℑ | ℜ | ∋ | ω }
   token ws { (\h | \s)* }
 }
