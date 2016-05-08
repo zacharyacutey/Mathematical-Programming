@@ -18,5 +18,6 @@ grammar AmplGrammar
   rule SetCS { ⊂ | ⊃ | ⊆ | ⊇ | ∈ }
   rule Union { <Int> | <Union> <UnionS> <Int> }
   rule UnionS { \\ | ∪ }
+  rule Int { <NumE> | <Int> ∩ <NumE> }
   token ws { (\h | \s)* }
 }
