@@ -8,7 +8,7 @@ grammar AmplGrammar
   rule Final { <Ite> | <Var> <FinalS> <Final> }
   rule Ite { . }
   rule Var { . }
-  rule FinalS { . }
+  rule FinalS { Π | Σ } #Moment of unicode truth!
   rule FunctionHead { . }
   token ws { (\h | \s)* }
 }
