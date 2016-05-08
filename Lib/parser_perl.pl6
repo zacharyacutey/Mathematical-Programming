@@ -19,5 +19,9 @@ grammar AmplGrammar
   rule Union { <Int> | <Union> <UnionS> <Int> }
   rule UnionS { \\ | ∪ }
   rule Int { <NumE> | <Int> ∩ <NumE> }
+  rule NumE { <NumC> <NumEH>* }
+  rule NumEH { <NumES> <NumC> }
+  rule NumES { ≟ | ≠ }
+  rule NumC { <Add> <NumCH>* }
   token ws { (\h | \s)* }
 }
