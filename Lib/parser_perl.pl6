@@ -10,6 +10,11 @@ grammar AmplGrammar
   rule Ite { <Or> | <Or> → <Final> ↛ <Ite> }
   rule Or { <And> | <Or> ∨ <And> }
   rule And { <SetE> | <And> ∧ <SetE> }
-  rule SetE { <SetC> <SetCH>* }
+  rule SetE { <SetC> <SetEH>* }
+  rule SetEH { <SetES> <SetC> }
+  rule SetES { ≡ | ≢ }
+  rule SetC { <Union> <SetCH>* }
+  rule SetCH { <SetCS> <Union> }
+  rule SetCS { ⊂ | ⊃ | ⊆ | ⊇ | ∈ }
   token ws { (\h | \s)* }
 }
