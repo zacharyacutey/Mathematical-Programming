@@ -38,7 +38,7 @@ grammar AmplGrammar
   rule FunctionHead { <Var> (\, <Var>)* (\, <Var> ≝ <Final>)* | <Var> ≝ <Final> (\, <Var> ≝ <Final>)* }
   rule Infinite { \{\:\} | \{ <Final> \: <Final> \} }
   rule Finite { \{\} | \{ <Final> (\, <Final>)* \} }
-  token Var { . }
-  token Number { . }
+  token Var { <[A .. Z a .. z]> <[A .. Z a .. z 0 .. 9]>*}
+  token Number { 0 | <[1 .. 9]> <[0 .. 9]>* }
   token ws { (\h | \s)* }
 }
